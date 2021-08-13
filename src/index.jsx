@@ -1,25 +1,36 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, createContext, useContext} from 'react';
 import ReactDom from 'react-dom'
 import PropTypes from 'prop-types';
 import styles from './index.scss'
 
+const TodoListContext = createContext();
 
 const Main = () => {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-   
-    return()=>{
-      console.log (`Componet 移除`);
-    }
-  });
+  const[todoList]= useState(['first', 'second'])
    return(
-  <>
-  <h1 className={styles.main}>{count}</h1>
-  <button type="button" onClick={()=>{setCount(count+1)}} >點我+1</button>
-  </>
+  <TodoListContext.Provider value={todoList}>
+    <div>
+      <span> {`代辦事項:${todoList.length}`}</span>
+      <TodoListPage />
+      <CurrentTask />
+    </div>
+  </TodoListContext.Provider>
   )
 }
 
+const CurrentTask =() =>{
+  const todoList = useContext(TodoListContext)
+  return <div>{`下一件事要做:${todoList[0]}`}</div>
+}
+
+const TodoListPage =()=>{
+
+ return(
+ <div>
+    <TodoList />
+  </div>
+ )
+}
 const SayHello = (props) => {
   const {names} = props
   const isEmpty = value => value === '';
@@ -72,4 +83,4 @@ const TodoList = () =>{
     <Task key={task} task = {task} />
   ))
 }
-ReactDom.render(<TodoList names={[1,2,3]}/>, document.getElementById('root'));
+ReactDom.render(<Main names={[1,2,3]}/>, document.getElementById('root'));
