@@ -1,12 +1,23 @@
+import * as actions from '../action/todolist'
+
 const initState ={
   todoList : ['test1','第二件事'],
 }
 
 const todoReducer = (state = initState, action) => {
     switch (action.type) {
-      default:
-        return state;
+        case actions.ADD_TODO:
+            return {
+                ...state,
+            todoList:[
+                ...state.todoList,
+            action.payload.todo,
+        ],
+        }
+        default:
+            return state;
     }
+    
   };
   
   export default todoReducer;
