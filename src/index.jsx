@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './index.scss'
 import { Provider,useSelector,useDispatch } from 'react-redux';
 import store from './store';
-import { addTodo } from './action/todolist';
+import { addTodo, fetchDataBegin } from './action/todolist';
 
 const TodoListContext = createContext();
 
@@ -14,6 +14,7 @@ const Main = () => {
   const [newTodo,setNewTodo] = useState('') 
    return(
   <div>
+     <Content />
       <span>{`代辦事項數: ${todoList.length}`}</span>
       <div>
         <input value={newTodo}  onChange={(e)=>{ setNewTodo (e.target.value) }}/>
@@ -94,4 +95,21 @@ const TodoList = () =>{
     </ul>
   ))
 }
+
+const Content =() =>{
+  const dispatch = useDispatch()
+  const data = useSelector(state=>state.data)
+    return(
+      <div>
+        <div>
+          {data ? JSON.stringify(data):'暫無資料'}
+        </div>
+        <button type='button' onClick={()=>{
+          dispatch(fetchDataBegin())
+        }}>
+          獲得資料
+        </button>
+      </div>
+    )
+  }
 ReactDom.render(<Provider store = {store}> <Main names={[1,2,3]}/></Provider> , document.getElementById('root'));

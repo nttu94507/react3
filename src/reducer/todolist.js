@@ -14,6 +14,11 @@ const todoReducer = (state = initState, action) => {
             action.payload.todo,
         ],
         }
+        case actions.FETCH_DATA_SUCCESS:
+            return {
+                ...state,
+            data: action.payload.data,
+      };
         default:
             return state;
     }
