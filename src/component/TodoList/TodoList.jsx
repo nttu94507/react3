@@ -1,5 +1,6 @@
 import React ,{useState}from 'react' 
 import { useSelector,useDispatch } from 'react-redux'
+import {Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { addTodo, fetchDataBegin } from '../../action/todolist';
 
@@ -25,8 +26,10 @@ const TodoList = () =>{
 
    const Task =(props) =>{
     const {task} = props
-    return <div>{task}</div>
-  }
+    return (<li>
+                <Link to={`/list/${task}`}>{task}</Link>
+            </li>
+      )  }
   
   Task.propTypes = {
     task:PropTypes.string,
