@@ -4,7 +4,7 @@ const car = {
 
   carContent: [],
 
-  getCurrentCar: () => ({car:car.carContent}),
+  getCurrentCar: () => car.carContent,
 
   addProdToCar: (name, count) => {
     const workCar = [...car.getCurrentCar()];
