@@ -1,7 +1,8 @@
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import car from '../src/utils/car'
 
-jest.mock('uuid/v1');
+
+jest.mock('uuid/dist/v1')
 
 const getCurrentCarSpy = jest.spyOn(
     car, 'getCurrentCar',

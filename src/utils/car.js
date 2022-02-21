@@ -1,5 +1,4 @@
-import uuid from 'uuid/v1';
-
+import { v1 as uuid } from 'uuid';
 const car = {
 
   carContent: [],
