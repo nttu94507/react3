@@ -11,7 +11,7 @@ export const addTodo = todo => ({
 
 export const FETCH_DATA_BEGIN = 'FETCH_DATA_BEGIN';
 
-export const fetchDataBegin = () => ({
+export const fetchDataBegin = data => ({
   type: FETCH_DATA_BEGIN,
 });
 
