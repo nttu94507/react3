@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects';
-import toodlistSaga from '../action/todolist';
+import contentSaga from '../sagas/content'
 
 
 function* rootSaga() {
     yield all([
-      toodlistSaga(),
+      contentSaga(),
     ]);
 }
 
