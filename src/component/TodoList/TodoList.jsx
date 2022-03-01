@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { addTodo, fetchDataBegin } from '../../action/todolist';
 
 
-const TodoList = () =>{
+const Todo_List = () =>{
     // const [todoList] = useState(['first','second'])
     const todoList = useSelector(state => state.todoList)
     return todoList.map(task=>(
@@ -19,7 +19,7 @@ const TodoList = () =>{
 
     return(
     <div>
-       <TodoList />
+       <Todo_List />
      </div>
     )
    }
@@ -51,7 +51,7 @@ const TodoList = () =>{
     const todoList= useSelector(state =>state.todoList)
     const [newTodo,setNewTodo] = useState('') 
      return(
-    <div>
+    <div data-testid="todolistBlock">
         <span>{`代辦事項數: ${todoList.length}`}</span>
         <div>
           <input value={newTodo}  onChange={(e)=>{ setNewTodo (e.target.value) }}/>
