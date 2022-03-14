@@ -1,21 +1,30 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-  entry: ['@babel/polyfill','./src/index.jsx'],
+  entry: ['@babel/polyfill','./src/index.tsx'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist/'),
   },
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: { extensions: ['.js', '.jsx','.ts','.tsx'] },
   mode:'production',
   module: {
     rules: [
       {
-        test: /.jsx$/,
+        test: /.ts$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react','@babel/preset-env'],
+            presets: ['@babel/typescript', '@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /.tsx$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-typescript','@babel/preset-react','@babel/preset-env'],
           },
         },
       },
