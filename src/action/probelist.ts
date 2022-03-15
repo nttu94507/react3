@@ -1,12 +1,11 @@
 import { call,put,takeEvery } from 'redux-saga/effects';
 
+export const ADD_PROBE = 'ADD_PROBE';
 
-export const ADD_TODO = 'ADD_TODO';
-
-export const addTodo = todo => ({
-    type: ADD_TODO,
+export const addProbe = probe => ({
+    type: ADD_PROBE,
     payload: {
-      todo,
+        probe,
     },
   });
 

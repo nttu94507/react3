@@ -4,7 +4,11 @@ const initState ={
   todoList : ['test1','第二件事'],
 }
 
-const todoReducer = (state = initState, action) => {
+interface ItodoReducer {
+
+}
+
+const todoReducer: ItodoReducer = (state = initState, action:any) => {
     switch (action.type) {
         case actions.ADD_TODO:
             return {
