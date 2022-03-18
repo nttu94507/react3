@@ -2,6 +2,27 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProbe } from "../../action/probelist";
 
+const Probe_list=()=>{
+  const probes = useSelector(state => state.probelist)
+  return probes.map(task=>(
+    <div>
+      {task}
+      </div>
+  )
+
+  )
+}
+
+
+const ProbeList =()=>{
+  return(
+    <div>
+      <Probe_list/>
+    </div>
+  )
+}
+
+
 
 const main =()=>{
     const dispatch = useDispatch();
@@ -20,7 +41,9 @@ const main =()=>{
           {/* <input value={newprobe['probename']}  /> */}
           <button type="button" onClick={()=>{dispatch(addProbe(newprobe))}}>新增待辦事項</button>
         </div>
+        < ProbeList/>
     </div>
+  
     )
 }
 

@@ -9,7 +9,7 @@
     "build-css": "node-sass src/index.scss src/index.css",
     "start": "webpack serve",
     "test": "jest --env=jsdom",
-    "tsm": "tsm src --watch"
+    "tsm": "typed-scss-modules src --watch"
   },
   "keywords": [],
   "author": "",
@@ -41,7 +41,7 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.2.1",
-    "typed-scss-modules": "^2.0.1",
+    "typed-scss-modules": "^6.2.0",
     "webpack": "^5.48.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
