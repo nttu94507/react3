@@ -22,7 +22,7 @@ const probeReducer = (state = allprobes, action:any) => {
                 ...state,
             probelist:[
                 ...state.probelist,
-            action.payload.todo,
+            action.payload.probe,
         ],
         }
         case actions.FETCH_DATA_SUCCESS:
