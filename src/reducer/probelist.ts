@@ -1,21 +1,23 @@
 import React from "react";
 import * as actions from '../action/probelist'
+import ProbeList from "../component/ProbeList";
 
 
 
 const allprobes = {
-
-    probelist:['234123325123',
-        // Probename: '12341244323'
-   
-    '2341werw23325123'
-        // Probename: '12341244323'
-    ]
+    probelist:['234123325123', '2341werw23325123']
 }
 
+const initProbes = {
+    probelist:[
+    {probeId: '101094507',customer:'裕隆'},
+    {probeId: '101094508',customer:'裕隆'},
+    {probeId: '101094508',customer:'裕隆'}
+    ]
 
+}
     
-const probeReducer = (state = allprobes, action:any) => {
+const probeReducer = (state = initProbes, action:any) => {
     switch (action.type) {
         case actions.ADD_PROBE:
             return {
