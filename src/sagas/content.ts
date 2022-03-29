@@ -1,7 +1,7 @@
 import { call,put,takeEvery } from "redux-saga/effects";
 import { FETCH_DATA_BEGIN ,fetchDataSuccess} from "../action/probelist";
 import {getContent} from '../api/content';
-import {getProbe}  from "../api/probe";
+import { getProbe } from "../api/probe";
 
 export function* fetchData() {
     const data = yield call(getProbe);
