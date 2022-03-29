@@ -11,16 +11,16 @@ export const addProbe = probe => ({
 
 export const FETCH_DATA_BEGIN = 'FETCH_DATA_BEGIN';
 
-export const fetchDataBegin = data => ({
+export const fetchDataBegin = () => ({
   type: FETCH_DATA_BEGIN,
 });
 
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 
- export const fetchDataSuccess = data => ({
+ export const fetchDataSuccess = probe => ({
   type: FETCH_DATA_SUCCESS,
   payload: {
-    data,
-  },
+    probe,
+  }
 });
 

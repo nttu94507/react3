@@ -10,11 +10,10 @@ const allprobes = {
 
 const initProbes = {
     probelist:[
-    {probeId: '101094507',customer:'裕隆'},
-    {probeId: '101094508',customer:'裕隆'},
-    {probeId: '101094508',customer:'裕隆'}
+    {probeId: '101094507',owner:'裕隆'},
+    {probeId: '101094508',owner:'裕隆'},
+    {probeId: '101094508',owner:'裕隆'}
     ]
-
 }
     
 const probeReducer = (state = initProbes, action:any) => {
@@ -30,7 +29,10 @@ const probeReducer = (state = initProbes, action:any) => {
         case actions.FETCH_DATA_SUCCESS:
             return {
                 ...state,
-            data: action.payload.data,
+            probelist:[
+                ...state.probelist,
+            action.payload.probe,
+            ]
       };
         default:
             return state;

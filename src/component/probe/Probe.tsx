@@ -1,8 +1,11 @@
-import React from 'react' 
+import React from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchDataBegin } from '../../action/probelist'
 
-const Content =() =>{
+
+
+
+const Probe =() =>{
     const dispatch = useDispatch()
     const data = useSelector(state=>state.data)
       return(
@@ -19,4 +22,5 @@ const Content =() =>{
       )
     }
 
-export default Content
+}
+ export default Probe
