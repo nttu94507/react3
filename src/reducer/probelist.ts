@@ -1,6 +1,5 @@
 import React from "react";
 import * as actions from '../action/probelist'
-import ProbeList from "../component/ProbeList";
 
 
 
@@ -15,6 +14,7 @@ const initProbes = {
     // {probeId: '101094508',owner:'裕隆'}
     ]
 }
+
     
 const probeReducer = (state = initProbes, action:any) => {
     switch (action.type) {
@@ -24,7 +24,7 @@ const probeReducer = (state = initProbes, action:any) => {
             probelist:[
                 ...state.probelist,
             action.payload.probe,
-        ],
+            ],
         }
         case actions.FETCH_DATA_SUCCESS:
             return {
@@ -33,6 +33,14 @@ const probeReducer = (state = initProbes, action:any) => {
                 ...state.probelist,
             ...action.payload.probe,
             ]
+        }
+        case actions.FETCG_INIT_DATA_SUCCESS:
+            return {
+                ...state,
+            probelist:[
+            ...action.payload.probe,
+            ]
+        
       };
         default:
             return state;

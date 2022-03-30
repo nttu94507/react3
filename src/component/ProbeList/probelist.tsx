@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProbe } from "../../action/probelist";
+import {fetchInitDataBegin} from "../../action/probelist"
 
 const Probe_list=()=>{
   const probes = useSelector(state => state.probelist)
@@ -38,6 +39,10 @@ const main =()=>{
     const probelist = useSelector(state=>state.probelist)    
     const [newprobe,steNewprobe] = useState('')
     const [customer,setCustomer] = useState('')
+
+    useEffect(()=>{
+      dispatch(fetchInitDataBegin())
+    },[])
 
 
     return ( 

@@ -24,3 +24,17 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
   }
 });
 
+export const FETCH_INIT_DATA_BEGIN = 'FETCG_INIT_DATA_BRGIN';
+
+export const fetchInitDataBegin = () => ({
+  type: FETCH_INIT_DATA_BEGIN,
+});
+
+export const FETCG_INIT_DATA_SUCCESS = 'FETCG_INIT_DATA_SUCCESS';
+
+ export const fetchInitDataSuccess = probe => ({
+  type: FETCG_INIT_DATA_SUCCESS,
+  payload: {
+    probe,
+  }
+});
