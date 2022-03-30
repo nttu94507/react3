@@ -5,6 +5,8 @@ import { fetchDataBegin } from '../../action/probelist'
 const Content =() =>{
     const dispatch = useDispatch()
     const data = useSelector(state=>state.data)
+    dispatch(fetchDataBegin())
+    
       return(
         <div data-testid="contentBlock">
           <div data-testid="contentData">
