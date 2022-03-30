@@ -51,7 +51,6 @@ const main =()=>{
         <div>
           <div>probe ID : <input value={newprobe}  onChange={(e)=>{ steNewprobe (e.target.value) }}/></div>
           <div>客戶名稱: <input value={customer}  onChange={(e)=>{ setCustomer (e.target.value) }}/></div>
-          {/* <input value={newprobe[1]}  onChange={(e)=>{ steNewprobe ({id:e.target.value}) }}/> */}
           <button type="button" onClick={()=>{dispatch(addProbe(probedata(newprobe,customer)))}}>新增Probe</button>
         </div>
         < ProbeList/>
