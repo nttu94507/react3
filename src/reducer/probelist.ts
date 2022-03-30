@@ -31,7 +31,7 @@ const probeReducer = (state = initProbes, action:any) => {
                 ...state,
             probelist:[
                 ...state.probelist,
-            action.payload.probe,
+            ...action.payload.probe,
             ]
       };
         default:
