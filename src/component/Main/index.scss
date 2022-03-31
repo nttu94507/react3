@@ -1,0 +1,21 @@
+.left {
+    flex: 2;
+    background-color: rgb(36, 36, 36);
+    
+}
+
+.right {
+    flex: 10;
+    margin: 2% 1% 0 1%;
+    border:solid 8px whitesmoke;
+    border-radius: 5px ;
+    background-color: whitesmoke;
+    padding: 1%;
+}
+
+.main {
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    // min-width: 950px;
+    min-height: 100%;
+}

@@ -10,7 +10,6 @@ const removeProbe = probeId => {
 
 const Probe_list = () => {
   const probes = useSelector(state => state.probelist)
-
   return probes.map(task => (
     <>
       <tr>
@@ -37,8 +36,6 @@ const ProbeList = () => {
 }
 
 const probedata = (newprobe, customer) => {
-  // console.log(newprobe)
-  // console.log(customer)
   const probe = { probeId: newprobe, owner: customer }
   return probe
 }
