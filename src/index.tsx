@@ -9,9 +9,7 @@ import styles from './index.scss'
 ReactDom.render(
     <Provider store={store}>
       <HashRouter>
-        <div className={styles.mainBlock}>
           <Main />
-        </div>
       </HashRouter>
     </Provider>,
     document.getElementById('root'),

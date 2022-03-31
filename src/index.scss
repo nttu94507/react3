@@ -1,7 +1,8 @@
-// *{
-//     color:whitesmoke ;
-// }
 
-body{
+html,body{
+    height: 100%;
     background-color: rgb(82, 82, 82);
+    display: flex;
+    position: relative;
 }
+

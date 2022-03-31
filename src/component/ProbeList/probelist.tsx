@@ -1,62 +1,72 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProbe } from "../../action/probelist";
-import {fetchInitDataBegin} from "../../action/probelist"
+import { fetchInitDataBegin } from "../../action/probelist"
+import styles from "./index.scss"
 
-const Probe_list=()=>{
+const removeProbe = probeId => {
+  console.log(probeId)
+}
+
+const Probe_list = () => {
   const probes = useSelector(state => state.probelist)
-  return probes.map(task=>(
-    <div>
-      {probes.indexOf(task)+1}{task.probeId}{task.owner}
-    </div>
 
-
-  )
-
-  )
+  return probes.map(task => (
+    <>
+      <tr>
+        <td>{task.probeId}</td>
+        <td>{task.owner}</td>
+        <td><div onClick={() => removeProbe(task.probeId)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>
+      </tr>
+    </>
+  ))
 }
 
 
-const ProbeList =()=>{
-  return(
-    <div>
-      <Probe_list/>
-    </div>
+const ProbeList = () => {
+  return (
+    <table className={styles.probelists}>
+      <tr>
+        <th>Probe ID</th>
+        <th>持有者</th>
+        <th>操作</th>
+      </tr>
+      <Probe_list />
+    </table>
   )
 }
 
-const probedata = (newprobe,customer) =>{
+const probedata = (newprobe, customer) => {
   // console.log(newprobe)
   // console.log(customer)
-  const probe = {probeId: newprobe,owner: customer}
+  const probe = { probeId: newprobe, owner: customer }
   return probe
 }
 
 
 
-const main =()=>{
-    const dispatch = useDispatch();
-    const probelist = useSelector(state=>state.probelist)    
-    const [newprobe,steNewprobe] = useState('')
-    const [customer,setCustomer] = useState('')
+const main = () => {
+  const dispatch = useDispatch();
+  const probelist = useSelector(state => state.probelist)
+  const [newprobe, steNewprobe] = useState('')
+  const [customer, setCustomer] = useState('')
 
-    useEffect(()=>{
-      dispatch(fetchInitDataBegin())
-    },[])
+  useEffect(() => {
+    dispatch(fetchInitDataBegin())
+  }, [])
 
 
-    return ( 
+  return (
     <div data-testid="todolistBlock">
-        <span>{`庫存數量: ${probelist.length}`}</span>
-        <div>
-          <div>probe ID : <input value={newprobe}  onChange={(e)=>{ steNewprobe (e.target.value) }}/></div>
-          <div>客戶名稱: <input value={customer}  onChange={(e)=>{ setCustomer (e.target.value) }}/></div>
-          <button type="button" onClick={()=>{dispatch(addProbe(probedata(newprobe,customer)))}}>新增Probe</button>
-        </div>
-        < ProbeList/>
+      <span>{`庫存數量: ${probelist.length}`}</span>
+      <div >
+        <div>probe ID : <input value={newprobe} onChange={(e) => { steNewprobe(e.target.value) }} /></div>
+        <div>客戶名稱: <input value={customer} onChange={(e) => { setCustomer(e.target.value) }} /></div>
+        <button type="button" onClick={() => { dispatch(addProbe(probedata(newprobe, customer))) }}>新增Probe</button>
+      </div>
+      < ProbeList />
     </div>
-  
-    )
+  )
 }
 
 export default main
