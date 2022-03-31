@@ -54,7 +54,7 @@ const main = () => {
 
 
   return (
-    <div data-testid="todolistBlock">
+    <div data-testid="probelistBlock">
       <span>{`庫存數量: ${probelist.length}`}</span>
       <div >
         <div>probe ID : <input value={newprobe} onChange={(e) => { steNewprobe(e.target.value) }} /></div>

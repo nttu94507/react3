@@ -7,7 +7,8 @@ import reducer from '../../../src/reducer/todolist';
 import Main from "../../../src/component/Main";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import TodoList from "../../../src/component/TodoList";
+// import TodoList from "../../../src/component/TodoList";
+// import ProbeList from "../../../src/component/ProbeList";
 
 
 const { Provider } = ReactRedux;
@@ -27,8 +28,8 @@ const generateComponent = (component,initState)=>{
 describe('Main',()=>{
     test('Main_ClickTodoListLink_RenderTodoList',()=>{
         const {getByTestId,queryByTestId} = generateComponent(<Main />);
-        const todolistLink = getByTestId('todolistLink');
-        fireEvent.click(todolistLink);
+        const probelistLink = getByTestId('probelistLink');
+        fireEvent.click(probelistLink);
         expect(getByTestId('todolistBlock')).toBeInTheDocument();
     })
 })
