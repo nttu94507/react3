@@ -30,6 +30,6 @@ describe('Main',()=>{
         const {getByTestId,queryByTestId} = generateComponent(<Main />);
         const probelistLink = getByTestId('probelistLink');
         fireEvent.click(probelistLink);
-        expect(getByTestId('todolistBlock')).toBeInTheDocument();
+        expect(getByTestId('probelistLink')).toBeInTheDocument();
     })
 })

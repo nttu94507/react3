@@ -4,12 +4,14 @@ import {getContent} from '../api/content';
 import { getProbe } from "../api/probe";
 
 export function* fetchData() {
-    const data = yield call(getProbe);
-    yield put (fetchDataSuccess(data?data:{probeId:'none',owner:'none'}));
+    const probe = yield call(getProbe);
+    console.log(probe);
+    yield put (fetchDataSuccess(probe?probe:{probeId:'none',owner:'none'}));
 } 
 export function* fetchInitData() {
-    const data = yield call(getProbe);
-    yield put (fetchInitDataSuccess(data?data:{probeId:'none',owner:'none'}));
+    const probe = yield call(getProbe);
+    console.log(probe);
+    yield put (fetchInitDataSuccess(probe?probe:{probeId:'none',owner:'none'}));
 } 
 
 function* mySaga() {
