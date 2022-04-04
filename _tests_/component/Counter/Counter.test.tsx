@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import React from "react";
 import { render,fireEvent} from "@testing-library/react";
-import { toBeInTheDocument } from "@testing-library/jest-dom";
+// import { toBeInTheDocument } from "@testing-library/jest-dom";
 import Counter from "../../../src/component/Counter";
 
 

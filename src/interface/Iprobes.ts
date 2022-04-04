@@ -1,1 +1,3 @@
-interface
+export interface Iprobe {
+    probelist:never[]
+}
