@@ -7,6 +7,7 @@ import probeReducer from '../reducer/probelist';
 
 const sagaMiddleware = createSagaMiddleware();
 
+
 const store = createStore(
   probeReducer,
   applyMiddleware(sagaMiddleware, logger),
