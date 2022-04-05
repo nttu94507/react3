@@ -10,15 +10,19 @@ const removeProbe = probeId => {
 
 const Probe_list = () => {
   const probes = useSelector(state => state.probelist)
-  return probes.map(task => (
-    <>
-      <tr>
-        <td>{task.probeId}</td>
-        <td>{task.owner}</td>
-        <td><div onClick={() => removeProbe(task.probeId)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>
-      </tr>
-    </>
-  ))
+  if (probes.length === 0) {
+    return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
+  } else {
+    return probes.map(task => (
+      <>
+        <tr>
+          <td>{task.probeId}</td>
+          <td>{task.owner}</td>
+          <td><div onClick={() => removeProbe(task.probeId)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>
+        </tr>
+      </>
+    ))
+  }
 }
 
 
@@ -54,7 +58,7 @@ const main = () => {
 
 
   return (
-    <div data-testid="probelistBlock">
+    <div data-testid="probelistBlock" className={styles.probelistBlock}>
       <span>{`庫存數量: ${probelist.length}`}</span>
       <div >
         <div>probe ID : <input value={newprobe} onChange={(e) => { steNewprobe(e.target.value) }} /></div>
