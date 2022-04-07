@@ -38,3 +38,16 @@ export const FETCG_INIT_DATA_SUCCESS = 'FETCG_INIT_DATA_SUCCESS';
     probe,
   }
 });
+
+export const POST_PROBE_DATA_SUCCESS = 'POST_PROBE_DATA_SUCCESS';
+
+ export const postProbeDataSuccess = probe => ({
+  type: POST_PROBE_DATA_SUCCESS,
+  payload: {
+    probe,
+  }
+});
+
+
+
+postProbeDataSuccess

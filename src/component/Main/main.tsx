@@ -3,7 +3,8 @@ import { Switch, Route, Link, HashRouter, } from 'react-router-dom';
 import List from '../List'
 import Content from '../Content';
 import ProbeList from '../ProbeList';
-import styles from './index.scss'
+import styles from './index.scss';
+import CrearteProbe from '../CreateProbe/createprobe';
 
 const Main = () => (
   <div className={styles.main}>
@@ -15,7 +16,7 @@ const Main = () => (
     </div>
     <div className={styles.right}>
       <Switch>
-        <Route exact path="/" component={Content} />
+        <Route exact path="/" component={CrearteProbe} />
         <Route path="/probelist" component={ProbeList} />
         <Route path="/list/:taskName" component={List} />
       </Switch>
