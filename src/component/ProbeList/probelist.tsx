@@ -10,6 +10,7 @@ const removeProbe = probeId => {
 
 const Probe_list = () => {
   const probes = useSelector(state => state.probelist)
+  console.log(probes)
   if (probes.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
