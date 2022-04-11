@@ -6,9 +6,10 @@ import { local } from "../../url/url";
 const postcreateprobe = data =>{
   fetch('http://'+local+'/api/Probe/',{
     method:'POST',
-    body: JSON.stringify({
-      data
-    })
+    body: JSON.stringify(data),
+    headers: {
+      'content-type': 'application/json'
+    },
   }).then((response)=> {
     console.log(data);
     console.log(response);
