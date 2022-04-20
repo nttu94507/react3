@@ -1,5 +1,5 @@
 import { call,put,takeEvery } from "redux-saga/effects";
-import { FETCH_DATA_BEGIN ,fetchDataSuccess,FETCH_INIT_DATA_BEGIN,fetchInitDataSuccess,ADD_PROBE,postProbeDataSuccess} from "../action/probelist";
+import { FETCH_DATA_BEGIN ,fetchDataSuccess,FETCH_INIT_DATA_BEGIN,fetchInitDataSuccess,ADD_PROBE,postProbeDataSuccess,POST_PROBE_DATA_BEGIN} from "../action/probelist";
 import {getContent} from '../api/content';
 import { getProbe } from "../api/probe";
 
@@ -13,12 +13,16 @@ export function* fetchInitData() {
     console.log(probe);
     yield put (fetchInitDataSuccess(probe?probe:{probeId:'none',owner:'none'}));
 }
-
-
+export function* fetchDataAfterPostProbe() {
+    const probe = yield call(getProbe);
+    console.log(probe);
+    yield put (postProbeDataSuccess(probe?probe:{probeId:'none',owner:'none'}));
+}
 
 function* mySaga() {
     yield takeEvery(FETCH_DATA_BEGIN,fetchData)
     yield takeEvery(FETCH_INIT_DATA_BEGIN,fetchInitData)
+    yield takeEvery(POST_PROBE_DATA_BEGIN,fetchDataAfterPostProbe)
 }
 
 export default mySaga;

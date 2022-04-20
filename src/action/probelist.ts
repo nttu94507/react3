@@ -25,10 +25,11 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 });
 
 export const FETCH_INIT_DATA_BEGIN = 'FETCG_INIT_DATA_BRGIN';
-
 export const fetchInitDataBegin = () => ({
-  type: FETCH_INIT_DATA_BEGIN,
-});
+  type: FETCH_INIT_DATA_BEGIN, 
+})
+
+
 
 export const FETCG_INIT_DATA_SUCCESS = 'FETCG_INIT_DATA_SUCCESS';
 
@@ -48,6 +49,8 @@ export const POST_PROBE_DATA_SUCCESS = 'POST_PROBE_DATA_SUCCESS';
   }
 });
 
+export const POST_PROBE_DATA_BEGIN = 'POST_PROBE_DATA_BEGIN';
 
-
-postProbeDataSuccess
+export const postProbeDataBegin = () => ({
+  type: POST_PROBE_DATA_BEGIN, 
+})

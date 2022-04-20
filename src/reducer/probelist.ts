@@ -30,9 +30,15 @@ const probeReducer = (state = initProbes, action: any) => {
             return {
                 ...state,
                 probelist: [
+                      ...action.payload.probe,
+                ]
+            };
+        case actions.POST_PROBE_DATA_SUCCESS:
+            return {
+                ...state,
+                probelist: [
                     ...action.payload.probe,
                 ]
-
             };
         default:
             return state;
