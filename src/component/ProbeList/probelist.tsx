@@ -29,7 +29,10 @@ const Probe_list = () => {
       <>
         <tr>
           <td>{task.probeId}</td>
-          <td>{task.owner}</td>
+          {/* <td>{task.owner}</td> */}
+          <td>{task.harddiskdrive==0?'8BG':'16GB'}</td>
+          <td>{task.status}</td>
+          <td>{task.type}</td>
           <td><div onClick={() => removeProbe(task.id,dispatch)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>
         </tr>
       </>
@@ -43,7 +46,10 @@ const ProbeList = () => {
     <table className={styles.probelists}>
       <tr>
         <th>Probe ID</th>
-        <th>持有者</th>
+        {/* <th>持有者</th> */}
+        <th>硬碟容量</th>
+        <th>狀態</th>
+        <th>型號</th>
         <th>操作</th>
       </tr>
       <Probe_list />
@@ -65,10 +71,13 @@ const main = () => {
     dispatch(fetchInitDataBegin())
   }, [])
 
+  const myBtnSend = () =>{
+    console.log("[Test] btn");
+  }
 
   return (
     <div data-testid="probelistBlock" className={styles.probelistBlock}>
-      <CrearteProbe />
+      <CrearteProbe  clickBtn={myBtnSend}/>
       <span>{`庫存數量: ${probelist.length}`}</span>
       < ProbeList />
     </div>
