@@ -30,7 +30,7 @@ const Probe_list = () => {
         <tr>
           <td>{task.probeId}</td>
           {/* <td>{task.owner}</td> */}
-          <td>{task.harddiskdrive==0?'8BG':'16GB'}</td>
+          <td>{task.harddiskdrive}</td>
           <td>{task.status}</td>
           <td>{task.type}</td>
           <td><div onClick={() => removeProbe(task.id,dispatch)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>

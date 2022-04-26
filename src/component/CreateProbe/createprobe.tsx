@@ -41,7 +41,7 @@ const CrearteProbe = ({clickBtn}) => {
 
   return (
     <div >
-      <div>probe ID : <input value={newprobe} onChange={(e) => { steNewprobe(e.target.value) }} /></div>
+      <div>probe ID : <input value={newprobe} onChange={(e) => {steNewprobe(e.target.value.replace(/[^\d]/g,'')) }} /></div>
       {/* <div>客戶名稱: <input value={owner} onChange={(e) => { setOwner(e.target.value) }} /></div> */}
       <div>硬碟大小: {harddisk}<select name="harddisk" defaultValue={0} onChange={(e) => { setHarddisk(e.target.value) }} ><option value={0}>8GB</option><option value={1}>16GB</option></select></div>
       <div>機型: {probetype}<select name="type" defaultValue={0} onChange={(e) => { setProbetype(e.target.value) }} ><option value={0}>P110</option><option value={1}>P220</option></select></div>
