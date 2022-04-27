@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProbe, postProbeDataBegin } from "../../action/probelist";
 import { fetchInitDataBegin } from "../../action/probelist"
-import CrearteProbe from "../CreateProbe/createprobe";
+import CrearteProbe from "../Editprobe/editprobe";
 import styles from "./index.scss"
 import { local } from "../../url/url";
+import { Link } from "react-router-dom"; 
 
 const removeProbe = (id,dispatch) => {
   
@@ -21,7 +22,6 @@ const removeProbe = (id,dispatch) => {
 const Probe_list = () => {
   const probes = useSelector(state => state.probelist)
   const dispatch = useDispatch()
-  console.log(probes)
   if (probes.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
@@ -29,11 +29,10 @@ const Probe_list = () => {
       <>
         <tr>
           <td>{task.probeId}</td>
-          {/* <td>{task.owner}</td> */}
           <td>{task.harddiskdrive}</td>
           <td>{task.status}</td>
           <td>{task.type}</td>
-          <td><div onClick={() => removeProbe(task.id,dispatch)}>刪除</div><div onClick={() => removeProbe(task.probeId)}>修改</div></td>
+          <td><div onClick={() => removeProbe(task.id,dispatch)}>刪除</div><div><Link to={"/probe/"+task.id} data-testid="probelistLink">修改</Link></div></td>
         </tr>
       </>
     ))
