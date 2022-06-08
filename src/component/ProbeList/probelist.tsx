@@ -70,13 +70,15 @@ const main = () => {
     dispatch(fetchInitDataBegin())
   }, [])
 
-  const myBtnSend = () =>{
-    console.log("[Test] btn");
-  }
+  // const myBtnSend = () =>{
+  //   console.log("[Test] btn");
+  // }
 
   return (
     <div data-testid="probelistBlock" className={styles.probelistBlock}>
-      <CrearteProbe  clickBtn={myBtnSend}/>
+      <CrearteProbe  
+      // clickBtn={myBtnSend}
+      />
       <span>{`庫存數量: ${probelist.length}`}</span>
       < ProbeList />
     </div>

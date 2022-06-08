@@ -4,10 +4,11 @@ import { postProbeDataBegin } from "../../action/probelist";
 import { local } from "../../url/url";
 import { postProbeData } from "../../api/probe";
 import { useParams } from "react-router-dom";
+import {getProbeDataInfoBegin} from '../../action/probelist'
 
-const postcreateprobe = (data, dispatch) => {
+const postcreateprobe = (data:any, dispatch:any) => {
   if (data.probeId) {
-    console.log(JSON.stringify(data))
+    // console.log(JSON.stringify(data))
     fetch('http://' + local + '/api/Probe/', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -23,7 +24,7 @@ const postcreateprobe = (data, dispatch) => {
   }
 }
 
-const probedata = (newprobe, harddisk, probetype, note) => {
+const probedata = (newprobe:any, harddisk:any, probetype:any, note:any) => {
   const probe = {
     probeId: newprobe,
     // owner: owner,
@@ -35,7 +36,7 @@ const probedata = (newprobe, harddisk, probetype, note) => {
 }
 
 const Editprobe = () => {
-  // const {id}=useParams();
+  const {id}=useParams();
   // if(id){
   //   console.log(id)
   //   const initdata =  Promise.resolve(getProbe(id))
@@ -45,6 +46,12 @@ const Editprobe = () => {
   //   })
   //   // console.log(res)
   // }
+  if(id){
+    useEffect(() => {
+      dispatch(getProbeDataInfoBegin(id?id:''))
+    },[])
+  }
+
 
   const dispatch = useDispatch();
   const [newprobe, steNewprobe] = useState('');
@@ -53,20 +60,20 @@ const Editprobe = () => {
   const [probetype, setProbetype] = useState(0);
   const [note, setNote] = useState('');
 
-  const {id}=useParams();
+  // const {id}=useParams();
 
-  if(id){
-    console.log(id+'useParams')
-    const initdata =  Promise.resolve(postProbeData(id))
-     initdata.then(function(result){
-      console.log(result)
-      result.map(info=>{
-        steNewprobe(info.probeId)
-        setHarddisk(info.postProbeData)
-        
-      })
-    })
-  }
+  // if(id){
+  //   console.log(id+'useParams')
+  //   const initdata =  Promise.resolve(postProbeData(id))
+  //    initdata.then(function(result){
+  //     console.log(result)
+  //     result.map(info=>{
+  //       steNewprobe(info.probeId)
+  //       setHarddisk(info.postProbeData)
+  //       setNote(info.note)
+  //     })
+  //   })
+  // }
 
 
   return (
