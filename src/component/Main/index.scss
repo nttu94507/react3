@@ -14,8 +14,11 @@
 }
 
 .main {
+    height:100% ;
     background-color: rgb(77, 77, 77);
-    display: flex;
-    border :red 1px;
-    min-height: 100%;
+    display: grid;
+    grid-template-columns: 280px auto 240px;
+    grid-template-rows: auto 92px;
+    // border :red 1px;
+    // min-height: 100%;
 }

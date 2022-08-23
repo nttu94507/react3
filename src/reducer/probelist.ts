@@ -4,6 +4,9 @@ import {Iprobe} from '../interface/Iprobes'
 
 const initProbes:Iprobe = {
     probelist: [
+    ],
+    probe:[
+        
     ]
 }
 
@@ -37,6 +40,13 @@ const probeReducer = (state = initProbes, action: any) => {
             return {
                 ...state,
                 probelist: [
+                    ...action.payload.probe,
+                ]
+            };
+        case actions.GET_PROBE_DATA_INFO_SUCCESS:
+            return {
+               ...state,
+               probe: [
                     ...action.payload.probe,
                 ]
             };

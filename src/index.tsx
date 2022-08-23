@@ -4,10 +4,9 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import store from './store';
 import Main from "./component/Main/main";
-import styles from './index.scss'
 
 ReactDom.render(
-    <Provider store={store}>
+    <Provider store={store} >
       <HashRouter>
           <Main />
       </HashRouter>
