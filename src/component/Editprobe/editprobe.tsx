@@ -5,6 +5,7 @@ import { local } from "../../url/url";
 import { useParams } from "react-router-dom";
 import {getProbeDataInfoBegin} from '../../action/probelist'
 import { useForm } from "react-hook-form";
+import styles from "./index.scss";
 
 
 const postcreateprobe = (data:any, dispatch:any) => {
@@ -59,7 +60,7 @@ const Editprobe = () => {
   const probe = useSelector(state => state.probe[0])
 
   return (
-    <>
+    <div className={styles.editprobe}>
       <div>
         <input {...register('ProbeId',{required:false})} />
       </div>
@@ -88,7 +89,7 @@ const Editprobe = () => {
         }} >
         按
       </button>
-    </>
+    </div>
     // <div >
     //   <div>probe ID : <input value={probe} onChange={(e) => { steNewprobe(e) }} /></div>
     //   <div>硬碟大小: {harddisk}<select name="harddisk" defaultValue={0} onChange={(e) => { setHarddisk(e.target.value) }} ><option value={0}>8GB</option><option value={1}>16GB</option></select></div>
