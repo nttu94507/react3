@@ -1,24 +1,28 @@
 .left {
-    flex: 2;
+    // flex: 2;
     background-color: rgb(36, 36, 36);
+    grid-column-start: 1;
+    grid-column-end: 2;
     
 }
 
 .right {
-    flex: 10;
-    margin: 2% 1% 0 1%;
-    border:solid 8px #6FB7B7;
+    // flex: 10;
+    margin: 2% 1% 1% 1%;
+    // border:solid 8px #f3f2d3;
     border-radius: 5px ;
-    background-color: #6FB7B7;
+    background-color: #f3f2d3;
     padding: 1%;
+    grid-column-start: 2;
+    grid-column-end: 8;
 }
 
 .main {
     height:100% ;
     background-color: rgb(77, 77, 77);
     display: grid;
-    grid-template-columns: 280px auto 240px;
-    grid-template-rows: auto 92px;
+    // grid-template-columns: repeat(auto-fill,10 );
+    // grid-template-rows: auto 92px;
     // border :red 1px;
     // min-height: 100%;
 }
