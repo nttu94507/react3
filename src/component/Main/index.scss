@@ -1,21 +1,80 @@
+.main {
+    height:100% ;
+    // background-color: rgb(77, 77, 77);
+    display: flex;
+    font-family: "思源黑體","Helvetica", "Arial","LiHei Pro","黑體-繁", sans-serif;
+}
+
 .left {
     flex: 2;
     background-color: rgb(36, 36, 36);
+    // grid-column-start: 1;
+    // grid-column-end: 2;
     
 }
 
 .right {
     flex: 10;
-    margin: 2% 1% 0 1%;
-    border:solid 8px #6FB7B7;
-    border-radius: 5px ;
-    background-color: #6FB7B7;
-    padding: 1%;
+    // width: max-content;
+    // height: max-content;
+    // margin: 2% 1% 1% 1%;
+    // border:solid 8px #f3f2d3;
+    // border-radius: 5px ;
+    background-color: #424242;
+    // padding: 1%;
+    // grid-column-start: 2;
+    // grid-column-end: 8;
+    display: flex;
 }
 
-.main {
-    background-color: rgb(77, 77, 77);
-    display: flex;
-    border :red 1px;
-    min-height: 100%;
+
+
+input {
+    margin: 0 5%;
+    width: 90%;
+    height: 40px;
+    border: 1px  solid #85d457;
+    border-radius: 10px ;
+    // border:0;
+    // background-color: none;
 }
+
+input:focus {
+    border: 3px solid #85d457;
+    outline: none;
+    // background-color: #85d457;
+    // color: #85d457;
+       
+}
+
+select {
+    appearance:none;
+    width: 90%;
+    height: 40px;
+    margin: 0 5%;
+    border-radius: 10px ; 
+    border-image: none;
+    border-color: #85d457;
+    outline-color: transparent;
+    box-shadow: none;
+    // border-width: 3px;
+    padding: 0 2%;
+    color : #222;
+
+    // 
+}
+
+select:focus{
+    border-width: 4px;
+}
+
+// .buttonDefault {
+//     width: 150px;
+//     height: 30px;
+//     margin: 0 30%;
+//     background-color: #85d457;
+//     border-color: #ccc;
+//     border-radius: 10px ;
+//     color: #eee;
+//     font-family: '微軟正黑體';
+// }

@@ -11,15 +11,15 @@ const Main = () => (
     <div className={styles.left} >
       <ul>
         <li><Link to="/" data-testid="homeLink">首頁</Link></li>
-        <li><Link to="/probelist" data-testid="probelistLink">Probe 列表</Link></li>
+        {/* <li><Link to="/probelist" data-testid="probelistLink">Probe 列表</Link></li> */}
       </ul>
     </div>
     <div className={styles.right}>
       <Switch>
         <Route exact path="/" component={Editprobe} />
-        <Route path="/probelist" component={ProbeList} />
+        {/* <Route path="/probelist" component={ProbeList} />
         <Route path="/probe/:id" component={Editprobe} />
-        <Route path="/list/:taskName" component={List} />
+        <Route path="/list/:taskName" component={List} /> */}
       </Switch>
     </div>
   </div>

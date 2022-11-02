@@ -1,0 +1,49 @@
+.editprobe{
+    padding: 10px 0%;
+    margin:10% auto auto auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    min-width: 350px ;
+    align-items: center;
+    justify-items: center;
+}
+.editlist{
+   margin-top: 25px;
+    
+}
+
+div{
+    font-size: large;
+}
+
+.editprobefontsize{
+    display: flex;
+    font-size: 32px;
+    color: #85d457;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonDefault {
+    font-family: '思源黑體';
+    display: flex;
+    width: 30%;
+    height: 30px;
+    margin:5px 35%;
+    color: #85d457;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px ;
+    border: solid 1.5px #85d457;
+
+}
+
+.buttonDefault:hover {
+    // background-color: #d5f5c3;
+    // border: solid 2px #85d457;
+    font-weight: bold;
+}
+
+// color: aquamarine;

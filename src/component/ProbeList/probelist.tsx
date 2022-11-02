@@ -7,9 +7,9 @@ import styles from "./index.scss"
 import { local } from "../../url/url";
 import { Link } from "react-router-dom"; 
 
-const removeProbe = (id,dispatch) => {
+const removeProbe = (id:number,dispatch:any) => {
   
-  fetch('http://'+local+'/api/Probe/'+id,{
+  fetch(`http://${local}/api/Probe/${id}`,{
     method:'DELETE',
     headers: {
       'content-type': 'application/json'
@@ -70,13 +70,13 @@ const main = () => {
     dispatch(fetchInitDataBegin())
   }, [])
 
-  const myBtnSend = () =>{
-    console.log("[Test] btn");
-  }
+  // const myBtnSend = () =>{
+  //   console.log("[Test] btn");
+  // }
 
   return (
     <div data-testid="probelistBlock" className={styles.probelistBlock}>
-      <CrearteProbe  clickBtn={myBtnSend}/>
+      <CrearteProbe  />
       <span>{`庫存數量: ${probelist.length}`}</span>
       < ProbeList />
     </div>

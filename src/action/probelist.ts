@@ -54,3 +54,21 @@ export const POST_PROBE_DATA_BEGIN = 'POST_PROBE_DATA_BEGIN';
 export const postProbeDataBegin = () => ({
   type: POST_PROBE_DATA_BEGIN, 
 })
+
+export const GET_PROBE_DATA_INFO_BEGIN = 'GET_PROBE_DATA_INFO_BEGIN';
+
+export const getProbeDataInfoBegin = (id:any) => ({
+  type: GET_PROBE_DATA_INFO_BEGIN,
+  id
+  
+})
+
+export const GET_PROBE_DATA_INFO_SUCCESS = 'GET_PROBE_DATA_INFO_SUCCESS';
+
+ export const getProbeDataInfoSuccess = (probe:any) => ({
+  type: GET_PROBE_DATA_INFO_SUCCESS,
+  payload: {
+    probe,
+  }
+});
+
