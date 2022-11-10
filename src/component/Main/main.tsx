@@ -11,7 +11,7 @@ const Main = () => (
     <div className={styles.left} >
       <div className={styles.sidemenu}>
       <Link to="/" data-testid="homeLink"><div className={styles.sidemenuBtn}>首頁</div></Link>
-      <Link to="/probelist" data-testid="probelistLink"><div className={styles.sidemenuBtn}>Probe 列表</div></Link>
+      <Link to="/probelist" data-testid="probelistLink"><div className={styles.sidemenuBtn}>Probe 管理</div></Link>
       </div>
     </div>
     <div className={styles.right}>

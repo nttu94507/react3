@@ -1,7 +1,7 @@
 a {
     display: flex;
     text-decoration: none;
-    min-height:40px ;
+    min-height:50px ;
     text-align: center;
     &:visited {
         color: white;
@@ -67,19 +67,22 @@ select:focus{
 }
 
 .sidemenuBtn {
+    font-size: larger;
     display: flex;
     font-family: '思源黑體';
     width: 100%;
     // height: 10%;
     padding:5px ;
-    color: #daffc4;
+    color: #fff;
     text-align: center;
     justify-content: center;
     align-content: center;
     align-items: center;
     justify-items: center;
     &:hover {
-        background-color: #5cb429;
+        background-color: #ffffff;
+        color: #85d457;
+
     }
 }
 
