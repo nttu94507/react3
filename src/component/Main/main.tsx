@@ -9,10 +9,10 @@ import Editprobe from '../Editprobe/editprobe';
 const Main = () => (
   <div className={styles.main}>
     <div className={styles.left} >
-      <ul>
-        <li><Link to="/" data-testid="homeLink">首頁</Link></li>
-        {/* <li><Link to="/probelist" data-testid="probelistLink">Probe 列表</Link></li> */}
-      </ul>
+      <div className={styles.sidemenu}>
+      <Link to="/" data-testid="homeLink"><div className={styles.sidemenuBtn}>首頁</div></Link>
+      <Link to="/probelist" data-testid="probelistLink"><div className={styles.sidemenuBtn}>Probe 管理</div></Link>
+      </div>
     </div>
     <div className={styles.right}>
       <Switch>
