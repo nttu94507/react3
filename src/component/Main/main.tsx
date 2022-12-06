@@ -17,8 +17,8 @@ const Main = () => (
     <div className={styles.right}>
       <Switch>
         <Route exact path="/" component={Editprobe} />
-        {/* <Route path="/probelist" component={ProbeList} />
-        <Route path="/probe/:id" component={Editprobe} />
+        <Route path="/probelist" component={ProbeList} />
+        {/* <Route path="/probe/:id" component={Editprobe} />
         <Route path="/list/:taskName" component={List} /> */}
       </Switch>
     </div>

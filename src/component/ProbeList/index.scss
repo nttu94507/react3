@@ -1,5 +1,17 @@
+.probelistBlock{
+    // background-color: #6FB7B7;
+    width: 100%;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    // display: flex;
+}
+.probelistItem {
+    display: flex;
+}
+
 .probelists {
-    background-color: #5CADAD	;
+    // background-color: #5CADAD	;
     border-radius: 10px;
     padding: 15px 10px ;
     width: 100%;
@@ -12,7 +24,3 @@
 th,td{
     text-align: center;
 }
-.probelistBlock{
-    background-color: #6FB7B7;
-}
-

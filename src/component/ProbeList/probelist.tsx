@@ -76,8 +76,13 @@ const main = () => {
 
   return (
     <div data-testid="probelistBlock" className={styles.probelistBlock}>
-      <CrearteProbe  />
-      <span>{`庫存數量: ${probelist.length}`}</span>
+      <div className={styles.probelistItem}>
+        <input placeholder={"  請輸入關鍵字"}></input>
+        <button>全部設備</button>
+        <button>P110</button>
+        <span>{`庫存數量: ${probelist.length}`}</span>
+      </div>
+      <hr></hr>
       < ProbeList />
     </div>
   )
