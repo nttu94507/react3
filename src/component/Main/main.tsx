@@ -4,7 +4,9 @@ import List from '../List'
 import Content from '../Content';
 import ProbeList from '../ProbeList';
 import styles from './index.scss';
-import Editprobe from '../Editprobe/editprobe';
+import Editprobe from '../Editprobe';
+import Dashboard from '../Dashboard';
+
 
 const Main = () => (
   <div className={styles.main}>
@@ -16,8 +18,9 @@ const Main = () => (
     </div>
     <div className={styles.right}>
       <Switch>
-        <Route exact path="/" component={Editprobe} />
+        <Route exact path="/" component={Dashboard} />
         <Route path="/probelist" component={ProbeList} />
+        <Route path="/editprobe" component={Editprobe} />
         {/* <Route path="/probe/:id" component={Editprobe} />
         <Route path="/list/:taskName" component={List} /> */}
       </Switch>

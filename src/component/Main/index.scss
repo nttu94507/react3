@@ -22,13 +22,15 @@ a {
 
 .left {
     flex: 2;
-    background-color: #336699;
+    background-color: #23507e;
     display: flex;
+    // opacity:0.4;
 }
 
 .right {
     flex: 10;
-    background-color: #72ade7;
+    // background-color: #72ade7;
+    background-color: #f0f0f0;
     display: flex;
 }
 

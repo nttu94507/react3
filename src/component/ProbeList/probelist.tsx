@@ -58,7 +58,7 @@ const Probe_list = () => {
     // ))
     return ProbeTestData.map(task =>(
       <div className={styles.probeBlock} title={task.note}>
-        <Link to={'/detail'+task.id}>
+        <Link to={'/detail/'+task.id}>
           <div>probe ID : {task.probeId}</div>
         </Link>
       </div>
@@ -117,17 +117,6 @@ const main = () => {
       </div>
       <hr></hr>
       <div className={styles.probelists}>
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
         < Probe_list />
         < Probe_list />
         < Probe_list />
