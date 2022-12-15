@@ -5,7 +5,7 @@ import styles from './index.scss';
 const DashboardTestData = {
     p110: {
         total: 495,
-        sold: 350
+        sold: 3
     },
     'p110+': {
         total: 495,
@@ -31,12 +31,20 @@ const DashboardTestData = {
 }
 
 const DashboardCard = (data: any) => {
+
+
     return Object.keys(data.data).map((num) => (
         <div className={styles.dashboardCard} >
             <div className={styles.dashboardCardTittle}>{num}</div>
             <div className={styles.dashboardCardContent}>
                 <div className={styles.dashboardCardContenttotal}>/{data.data[num].total}</div>
-                <div className={styles.dashboardCardContentGold50}>{data.data[num].sold}</div>
+                {
+                    data.data[num].sold < 5
+                        ? (<div className={styles.dashboardCardContentred5}>{data.data[num].sold}</div>)
+                        : (<div className={styles.dashboardCardContentGold50}>{data.data[num].sold}</div>)
+
+                }
+
             </div>
         </div>
     ));

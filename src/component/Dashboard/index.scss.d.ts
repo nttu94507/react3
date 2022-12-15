@@ -6,6 +6,7 @@ export const dashboardButtomRight: string;
 export const dashboardCard: string;
 export const dashboardCardContent: string;
 export const dashboardCardContentGold50: string;
+export const dashboardCardContentred5: string;
 export const dashboardCardContenttotal: string;
 export const dashboardCardTittle: string;
 export const dashboardMiddle: string;
