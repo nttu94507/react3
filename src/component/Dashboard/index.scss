@@ -102,12 +102,13 @@
 
 .statusCard{
     background-color: #fff;
-    margin: 2.5% 0;
+    margin: 1% 0;
     flex:1 ;
     border-radius: 10px;
     padding: 1%;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    min-width: 180px;
 }
 
 .redLight{
@@ -129,16 +130,65 @@
 .statusCardLeft {
     flex: 1;
     display: flex;
-    align-items: center;
-    margin-left: 20px;
+    padding: 15px;
     font-size: 36px;
     font-family: "微軟正黑體";
     font-weight: 800;
     color: #727272a2;
+    flex-direction: column;
+    align-items: center;
 }
-.statusCardRight{
-    flex:1;
+.statusCardLeftTitle{
+    flex: 1;
+    font-size: 36px;
+    font-family: "微軟正黑體";
     display: flex;
-    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.statusCardLeftEvent{
+    flex:1;
+    font-size: 24px;
+}
+
+.statusCardMiddle{
+    flex:1
+}
+
+.statusCardRight{
+    flex:2;
+    display: flex;
+    flex-direction: column;
     margin: 5px;
+}
+
+.statusCardRightTop{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #727272a2;
+}
+.statusCardRightButtom{
+    flex: 1;
+    display: flex;
+}
+
+.statusCardRightButtomDevices{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5%;
+    flex-direction: column;
+}
+.statusCardRightButtomDevice{
+    flex: 1;
+    font-size: 18px;
+    display: flex;
+    font-family: "微軟正黑體";
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #777;
 }
