@@ -1,16 +1,14 @@
-::-webkit-scrollbar{
 
-    display:none;
-    
-}
     
 a {
     display: flex;
     text-decoration: none;
     min-height:50px ;
     text-align: center;
+    color: #252525;
     &:visited {
-        color: black ;
+        color: #252525
+         ;
     }
 }   
 

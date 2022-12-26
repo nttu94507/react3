@@ -1,4 +1,15 @@
-.probelistBlock{
+$color0: #ffa43bbb;
+$color1: #00b1187d;
+$color2: #006dd37d;
+$color3: #0099997d;
+$color4: #c00d007d;
+$color5: #3c00cf7d;
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.probelistBlock {
     // background-color: #6FB7B7;
     width: 100%;
     margin: 20px;
@@ -6,16 +17,18 @@
     padding: 10px;
     // display: flex;
 }
+
 .probelistItem {
     display: flex;
     margin: 0 0 15px 0;
 }
 
 .item3 {
-    flex:3
+    flex: 3
 }
+
 .item6 {
-    flex:6
+    flex: 6
 }
 
 .searchBar {
@@ -26,29 +39,125 @@
 .probelists {
     // height: 90%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     overflow: scroll;
 }
 
-.probeBlock{
-    max-width: 18%;
-    min-width: 18%;
-    height: 150px;
+.probeCard {
+    max-width: 20%;
+    min-width: 230px;
+    min-height: 50px;
     flex: 1;
-    background-color: #b7ff42;
-    margin: 2% 1%;
+    // background-color: #00afc152;
+    background-color: #fff;
+    margin: 0.5% 0.5%;
     border-radius: 5px;
-    overflow:"scroll";
+    overflow: "scroll";
+    // padding: 1%;
+
 
 }
 
-.probeBlock>a {
+.probeCard>a {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 5px 10px ;
 }
-.probe{
-    padding: 5px 10px ;
+
+.probeCardStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #4d4d4d;
+    font-weight: 500;
+    margin-top: 15px;
+
+}
+
+.probeCardStatusLeft {
+    // padding: 3px 7px;
+    display: flex;
+    font-size: 24px;
+    border-radius: 3px;
+}
+
+.probeCardStatusRight {
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.probeCardInfo {
+    flex: 1;
+    display: flex;
+    margin-top: 15px;
+    color: #4d4d4d;
+    justify-content: space-between;
+}
+
+.probeCardInfoLeft {
+    font-size: 15px;
+}
+
+.probeCardInfoRight {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.probe {
+    padding: 5px 10px;
     font-size: larger;
 }
-th,td{
+
+th,
+td {
     text-align: center;
+}
+
+.status0 {
+    color: $color0;
+}
+
+.status1 {
+    color: $color1;
+}
+
+.status2 {
+    color: $color2;
+}
+
+.status3 {
+    color: $color3;
+}
+
+.status4 {
+    color: $color4;
+}
+.status5 {
+    color: $color5;
+}
+
+
+.probeCardButtomStasus0 {
+    border-bottom: 5px solid $color0;
+}
+
+.probeCardButtomStasus1 {
+    border-bottom: 5px solid $color1;
+}
+
+.probeCardButtomStasus2 {
+    border-bottom: 5px solid $color2;
+}
+
+.probeCardButtomStasus3 {
+    border-bottom: 5px solid $color3;
+}
+
+.probeCardButtomStasus4 {
+    border-bottom: 5px solid $color4;
+}
+
+.probeCardButtomStasus5 {
+    border-bottom: 5px solid $color5;
 }

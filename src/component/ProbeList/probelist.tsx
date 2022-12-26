@@ -5,64 +5,193 @@ import { fetchInitDataBegin } from "../../action/probelist"
 import CrearteProbe from "../Editprobe/editprobe";
 import styles from "./index.scss"
 import { local } from "../../url/url";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import { take } from "redux-saga/effects";
 
-const removeProbe = (id:number,dispatch:any) => {
-  
-  fetch(`http://${local}/api/Probe/${id}`,{
-    method:'DELETE',
+const removeProbe = (id: number, dispatch: any) => {
+
+  fetch(`http://${local}/api/Probe/${id}`, {
+    method: 'DELETE',
     headers: {
       'content-type': 'application/json'
     },
-  }).then((response)=> {
+  }).then((response) => {
     dispatch(postProbeDataBegin())
   })
 }
 
 const ProbeTestData = [
   {
-    "id":123,
+    "id": 123,
     "probeId": 3345678,
-    "status": "在庫",
-    "note":"",
-    "harddiskdrive":"8GB",
-    "type":"P110"
+    "statuscode": 1,
+    "note": "",
+    "harddiskdrive": "8GB",
+    "type": "P110",
+    "createdate": "2022-12-19"
   },
   {
-    "id":1234,
+    "id": 1234,
     "probeId": 13345678,
-    "status": "出貨",
-    "note":"誠誠品",
-    "harddiskdrive":"16GB",
-    "type":"P110"
+    "statuscode": 0,
+    "note": "誠誠品",
+    "harddiskdrive": "16GB",
+    "type": "P360",
+    "createdate": "2022-12-18"
+  },
+  {
+    "id": 1234,
+    "probeId": 13345678,
+    "statuscode": 2,
+    "note": "誠誠品",
+    "harddiskdrive": "16GB",
+    "type": "P560",
+    "createdate": "2022-12-18"
+  },
+  {
+    "id": 1234,
+    "probeId": 13345678,
+    "statuscode": 4,
+    "note": "誠誠品",
+    "harddiskdrive": "16GB",
+    "type": "P220",
+    "createdate": "2022-12-18"
+  },
+  {
+    "id": 1234,
+    "probeId": 13345678,
+    "statuscode": 3,
+    "note": "誠誠品",
+    "harddiskdrive": "16GB",
+    "type": "P110+",
+    "createdate": "2022-12-18"
+  },
+  {
+    "id": 1234,
+    "probeId": 13345678,
+    "statuscode": 5,
+    "note": "誠誠品",
+    "harddiskdrive": "16GB",
+    "type": "P110+",
+    "createdate": "2022-12-18"
   }
 ]
 
+const ProbeCardStatus = () => {
+  
+
+}
+
 const Probe_list = () => {
-  // const probes = useSelector(state => state.probelist)
-  // const dispatch = useDispatch()
   if (ProbeTestData.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
-    // return ProbeTestData.map(task => (
-    //   <>
-    //     <tr>
-    //       <td>{task.probeId}</td>
-    //       <td>{task.harddiskdrive}</td>
-    //       <td>{task.status}</td>
-    //       <td>{task.type}</td>
-    //       <td><div onClick={() => removeProbe(task.id,dispatch)}>刪除</div><div><Link to={"/probe/"+task.id} data-testid="probelistLink">修改</Link></div></td>
-    //     </tr>
-    //   </>
-    // ))
-    return ProbeTestData.map(task =>(
-      <div className={styles.probeBlock} title={task.note}>
-        <Link to={'/detail/'+task.id}>
-          <div>probe ID : {task.probeId}</div>
-        </Link>
-      </div>
-    ))
+    return ProbeTestData.map(task => {
+      switch (task.statuscode) {
+        case 0:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus0}`} title={task.note} >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status0}`}>出貨</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
+          )
+        case 1:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus1}`} title={task.note} >
+            <Link to={'/detail/' + task.id}>
+              <div className={`${styles.probeCardStatus}`}>
+                <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                {/* <ProbeCardStatus status={task.statuscode} /> */}
+                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+              </div>
+              <div className={styles.probeCardInfo}>
+                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                <div className={`${styles.probeCardInfoRight} ${styles.status1}`}>在庫</div>
+                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+              </div>
+            </Link>
+          </div >
+          )
+      case 2:
+        return (
+          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus2}`} title={task.note} >
+            <Link to={'/detail/' + task.id}>
+              <div className={`${styles.probeCardStatus}`}>
+                <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                {/* <ProbeCardStatus status={task.statuscode} /> */}
+                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+              </div>
+              <div className={styles.probeCardInfo}>
+                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                <div className={`${styles.probeCardInfoRight} ${styles.status2}`}>預留</div>
+                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+              </div>
+            </Link>
+          </div >
+        )
+      case 3:
+        return(
+          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus3}`} title={task.note} >
+            <Link to={'/detail/' + task.id}>
+              <div className={`${styles.probeCardStatus}`}>
+                <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                {/* <ProbeCardStatus status={task.statuscode} /> */}
+                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+              </div>
+              <div className={styles.probeCardInfo}>
+                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                <div className={`${styles.probeCardInfoRight} ${styles.status3}`}>外借</div>
+                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+              </div>
+            </Link>
+          </div >
+        )
+      case 4:
+        return (
+          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus4}`} title={task.note} >
+            <Link to={'/detail/' + task.id}>
+              <div className={`${styles.probeCardStatus}`}>
+                <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                {/* <ProbeCardStatus status={task.statuscode} /> */}
+                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+              </div>
+              <div className={styles.probeCardInfo}>
+                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                <div className={`${styles.probeCardInfoRight} ${styles.status4}`}>故障</div>
+                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+              </div>
+            </Link>
+          </div >
+        )
+        case 5:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus5}`} title={task.note} >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status5}`}>內借</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
+          )
+      }
+    })
   }
 }
 
@@ -112,14 +241,13 @@ const main = () => {
           <input placeholder={"  請輸入關鍵字"} className={styles.searchBar}></input>
         </div>
         <div className={styles.item3}>
-          <span>{`庫存數量: ${probelist.length}`}</span>
+          {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
+          <button >新增Probe </button>
         </div>
       </div>
       <hr></hr>
+      <span>{`庫存數量: ${ProbeTestData.length}`}</span>
       <div className={styles.probelists}>
-        < Probe_list />
-        < Probe_list />
-        < Probe_list />
         < Probe_list />
       </div>
     </div>
