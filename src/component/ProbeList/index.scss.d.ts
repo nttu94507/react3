@@ -1,3 +1,5 @@
+export const dialog: string;
+export const hidden: string;
 export const item3: string;
 export const item6: string;
 export const probe: string;

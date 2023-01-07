@@ -7,6 +7,7 @@ import styles from "./index.scss"
 import { local } from "../../url/url";
 import { Link } from "react-router-dom";
 import { take } from "redux-saga/effects";
+import Editprobe from "../Editprobe/editprobe";
 
 const removeProbe = (id: number, dispatch: any) => {
 
@@ -77,10 +78,13 @@ const ProbeTestData = [
   }
 ]
 
-const ProbeCardStatus = () => {
-  
-
-}
+// const addProbedialog = () => {
+//   return (
+//     <dialog className={styles.dialog}>
+//       <Editprobe />
+//     </dialog>
+//   )
+// }
 
 const Probe_list = () => {
   if (ProbeTestData.length === 0) {
@@ -108,71 +112,71 @@ const Probe_list = () => {
         case 1:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus1}`} title={task.note} >
-            <Link to={'/detail/' + task.id}>
-              <div className={`${styles.probeCardStatus}`}>
-                <div className={styles.probeCardStatusLeft}>{task.type}</div>
-                {/* <ProbeCardStatus status={task.statuscode} /> */}
-                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
-              </div>
-              <div className={styles.probeCardInfo}>
-                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                <div className={`${styles.probeCardInfoRight} ${styles.status1}`}>在庫</div>
-                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
-              </div>
-            </Link>
-          </div >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status1}`}>在庫</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
           )
-      case 2:
-        return (
-          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus2}`} title={task.note} >
-            <Link to={'/detail/' + task.id}>
-              <div className={`${styles.probeCardStatus}`}>
-                <div className={styles.probeCardStatusLeft}>{task.type}</div>
-                {/* <ProbeCardStatus status={task.statuscode} /> */}
-                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
-              </div>
-              <div className={styles.probeCardInfo}>
-                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                <div className={`${styles.probeCardInfoRight} ${styles.status2}`}>預留</div>
-                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
-              </div>
-            </Link>
-          </div >
-        )
-      case 3:
-        return(
-          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus3}`} title={task.note} >
-            <Link to={'/detail/' + task.id}>
-              <div className={`${styles.probeCardStatus}`}>
-                <div className={styles.probeCardStatusLeft}>{task.type}</div>
-                {/* <ProbeCardStatus status={task.statuscode} /> */}
-                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
-              </div>
-              <div className={styles.probeCardInfo}>
-                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                <div className={`${styles.probeCardInfoRight} ${styles.status3}`}>外借</div>
-                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
-              </div>
-            </Link>
-          </div >
-        )
-      case 4:
-        return (
-          < div className={`${styles.probeCard} ${styles.probeCardButtomStasus4}`} title={task.note} >
-            <Link to={'/detail/' + task.id}>
-              <div className={`${styles.probeCardStatus}`}>
-                <div className={styles.probeCardStatusLeft}>{task.type}</div>
-                {/* <ProbeCardStatus status={task.statuscode} /> */}
-                <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
-              </div>
-              <div className={styles.probeCardInfo}>
-                <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                <div className={`${styles.probeCardInfoRight} ${styles.status4}`}>故障</div>
-                {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
-              </div>
-            </Link>
-          </div >
-        )
+        case 2:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus2}`} title={task.note} >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status2}`}>預留</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
+          )
+        case 3:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus3}`} title={task.note} >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status3}`}>外借</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
+          )
+        case 4:
+          return (
+            < div className={`${styles.probeCard} ${styles.probeCardButtomStasus4}`} title={task.note} >
+              <Link to={'/detail/' + task.id}>
+                <div className={`${styles.probeCardStatus}`}>
+                  <div className={styles.probeCardStatusLeft}>{task.type}</div>
+                  {/* <ProbeCardStatus status={task.statuscode} /> */}
+                  <div className={`${styles.probeCardStatusRight}`}>{task.createdate}</div>
+                </div>
+                <div className={styles.probeCardInfo}>
+                  <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status4}`}>故障</div>
+                  {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
+                </div>
+              </Link>
+            </div >
+          )
         case 5:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus5}`} title={task.note} >
@@ -219,36 +223,48 @@ const ProbeList = () => {
 const main = () => {
   const dispatch = useDispatch();
   const probelist = useSelector(state => state.probelist)
-  const [newprobe, steNewprobe] = useState('')
+  const [display, setdisplay] = useState(0)
   const [customer, setCustomer] = useState('')
 
-  useEffect(() => {
-    dispatch(fetchInitDataBegin())
-  }, [])
+  const addProbedialog =(display)=>{
+    switch (display) {
+      case 0:
+        setdisplay(1)
+      case 1:
+        setdisplay(0)
+    }
+  }
 
-  // const myBtnSend = () =>{
-  //   console.log("[Test] btn");
-  // }
+  // useEffect(() => {
+  //   dispatch(fetchInitDataBegin())
+  // }, [])
+
+
 
   return (
-    <div data-testid="probelistBlock" className={styles.probelistBlock}>
-      <div className={styles.probelistItem}>
-        <div className={styles.item3}>
-          <button>全部設備</button>
-          <button>P110</button>
+    <div className={styles.probe}>
+      <div data-testid="probelistBlock" className={styles.probelistBlock}>
+        <div className={styles.probelistItem}>
+          <div className={styles.item3}>
+            <button>全部設備</button>
+            <button>P110</button>
+          </div>
+          <div className={styles.item6}>
+            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar}></input>
+          </div>
+          <div className={styles.item3}>
+            {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
+            <div onClick={()=>addProbedialog(display)}>新增Probe </div>
+          </div>
         </div>
-        <div className={styles.item6}>
-          <input placeholder={"  請輸入關鍵字"} className={styles.searchBar}></input>
-        </div>
-        <div className={styles.item3}>
-          {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
-          <button >新增Probe </button>
+        <hr></hr>
+        <span>{`庫存數量: ${ProbeTestData.length}`}</span>
+        <div className={styles.probelists}>
+          < Probe_list />
         </div>
       </div>
-      <hr></hr>
-      <span>{`庫存數量: ${ProbeTestData.length}`}</span>
-      <div className={styles.probelists}>
-        < Probe_list />
+      <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>
+        <Editprobe />
       </div>
     </div>
   )
