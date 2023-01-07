@@ -230,8 +230,10 @@ const main = () => {
     switch (display) {
       case 0:
         setdisplay(1)
+        return
       case 1:
         setdisplay(0)
+        return
     }
   }
 
