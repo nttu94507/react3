@@ -266,7 +266,7 @@ const main = () => {
         </div>
       </div>
       <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>
-        <Editprobe />
+        <Editprobe btn={addProbedialog} dis={display}/>
       </div>
     </div>
   )

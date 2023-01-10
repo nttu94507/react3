@@ -46,7 +46,8 @@ const probedata = (newprobe:any, harddisk:any, probetype:any, note:any) => {
   return probe
 }
 
-const Editprobe = () => {
+const Editprobe = (drop) => {
+  const {btn,dis} = drop
   const {id}=useParams();
   const {register ,getValues} = useForm();
   
@@ -99,6 +100,14 @@ const Editprobe = () => {
           // console.log(value);
           }} >
           確認送出
+        </div>
+        <div className={styles.buttonDefault} onClick ={()=>{
+          btn(dis)
+          // const value = getValues();
+          // postcreateprobe(value,dispatch);
+          // console.log(value);
+          }} >
+          取消
         </div>
       </div>
     </div>

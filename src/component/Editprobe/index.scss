@@ -1,22 +1,24 @@
-.editprobe{
+.editprobe {
     padding: 10px 0%;
     // margin:10% auto auto auto;
     background-color: #fff;
     border-radius: 10px;
-    min-width: 350px ;
+    min-width: 350px;
     align-items: center;
     justify-items: center;
 }
-.editlist{
-   margin-top: 25px;
-    
+
+.editlist {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
 }
 
-div{
+div {
     font-size: large;
 }
 
-.editprobefontsize{
+.editprobefontsize {
     display: flex;
     font-size: 32px;
     color: #336699;
@@ -29,13 +31,13 @@ div{
     display: flex;
     width: 30%;
     height: 30px;
-    margin:5px 35%;
+    margin: 5px;
     color: #fff;
-    text-align: center;
+    // text-align: center;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    border-radius: 10px ;
+    border-radius: 10px;
     background-color: #72ade7;
     border: solid 1.5px #72ade7;
 
@@ -45,7 +47,7 @@ div{
     background-color: #fff;
     border: solid 1.5px #72ade7;
     color: #336699;
-    
+
     // border: solid 2px #85d457;
     // font-weight: bold;
 }
