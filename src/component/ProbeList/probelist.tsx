@@ -8,6 +8,7 @@ import { local } from "../../url/url";
 import { Link } from "react-router-dom";
 import { take } from "redux-saga/effects";
 import Editprobe from "../Editprobe/editprobe";
+import { containeranalysis } from "googleapis/build/src/apis/containeranalysis";
 
 const removeProbe = (id: number, dispatch: any) => {
 
@@ -21,7 +22,7 @@ const removeProbe = (id: number, dispatch: any) => {
   })
 }
 
-const ProbeTestData = [
+const ProbeData = [
   {
     "id": 123,
     "probeId": 3345678,
@@ -86,11 +87,12 @@ const ProbeTestData = [
 //   )
 // }
 
-const Probe_list = () => {
-  if (ProbeTestData.length === 0) {
+const Probe_list = (d) => {
+  // console.log(d.data.length)
+  if (d.data.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
-    return ProbeTestData.map(task => {
+    return d.data.map(task => {
       switch (task.statuscode) {
         case 0:
           return (
@@ -200,22 +202,22 @@ const Probe_list = () => {
 }
 
 
-const ProbeList = () => {
-  return (
-    <table className={styles.probelists}>
-      <tr >
-        <th>Probe ID</th>
-        {/* <th>持有者</th> */}
-        <th>硬碟容量</th>
-        <th>狀態</th>
-        <th>型號</th>
-        <th>操作</th>
-      </tr>
-      <Probe_list />
-    </table>
-  )
-}
-
+const search = (key,data,action) => {
+    if (key!=""){
+      const items = ProbeData.filter(val=>{
+        console.log((val.statuscode+'').includes(key))
+          if ((val.statuscode+'').includes(key)){
+            return val
+          }else if (val.note.includes(key)){
+            return val
+          }
+        // return JSON.stringify(val.statuscode)==key
+      })
+      action(items)
+    }else{
+      action(ProbeData)
+    }
+  }
 
 
 
@@ -224,7 +226,8 @@ const main = () => {
   const dispatch = useDispatch();
   const probelist = useSelector(state => state.probelist)
   const [display, setdisplay] = useState(0)
-  const [customer, setCustomer] = useState('')
+  const [ProbeTestData, setProbeTestData] = useState(ProbeData)
+  // const [probeorigin,setprobeorigindata] = useState(;)
 
   const addProbedialog =(display)=>{
     switch (display) {
@@ -236,7 +239,7 @@ const main = () => {
         return
     }
   }
-
+  // console.log(ProbeTestData)
   // useEffect(() => {
   //   dispatch(fetchInitDataBegin())
   // }, [])
@@ -252,7 +255,7 @@ const main = () => {
             <button>P110</button>
           </div>
           <div className={styles.item6}>
-            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar}></input>
+            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>search(e.target.value,ProbeTestData,setProbeTestData)}></input>
           </div>
           <div className={styles.item3}>
             {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
@@ -262,7 +265,7 @@ const main = () => {
         <hr></hr>
         <span>{`庫存數量: ${ProbeTestData.length}`}</span>
         <div className={styles.probelists}>
-          < Probe_list />
+          < Probe_list data={ProbeTestData}/>
         </div>
       </div>
       <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>
