@@ -210,6 +210,14 @@ const search = (key,data,action) => {
             return val
           }else if (val.note.includes(key)){
             return val
+          }else if (val.type.includes(key)){
+            return val
+          }else if (val.harddiskdrive.includes(key)){
+            return val
+          }else if ((val.probeId+'').includes(key)){
+            return val
+          }else if (val.createdate.includes(key)){
+            return val
           }
         // return JSON.stringify(val.statuscode)==key
       })
@@ -227,7 +235,8 @@ const main = () => {
   const probelist = useSelector(state => state.probelist)
   const [display, setdisplay] = useState(0)
   const [ProbeTestData, setProbeTestData] = useState(ProbeData)
-  // const [probeorigin,setprobeorigindata] = useState(;)
+
+  console.log(probelist)
 
   const addProbedialog =(display)=>{
     switch (display) {
@@ -240,9 +249,9 @@ const main = () => {
     }
   }
   // console.log(ProbeTestData)
-  // useEffect(() => {
-  //   dispatch(fetchInitDataBegin())
-  // }, [])
+  useEffect(() => {
+    dispatch(fetchInitDataBegin())
+  }, [])
 
 
 
@@ -263,9 +272,9 @@ const main = () => {
           </div>
         </div>
         <hr></hr>
-        <span>{`庫存數量: ${ProbeTestData.length}`}</span>
+        <span>{`庫存數量: ${probelist.length}`}</span>
         <div className={styles.probelists}>
-          < Probe_list data={ProbeTestData}/>
+          < Probe_list data={probelist}/>
         </div>
       </div>
       <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>

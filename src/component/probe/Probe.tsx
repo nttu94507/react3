@@ -1,26 +1,22 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from "react-router-dom";
 import { fetchDataBegin } from '../../action/probelist'
 
 
 
 
 const Probe =() =>{
-    const dispatch = useDispatch()
-    const data = useSelector(state=>state.data)
+    const {Id} = useParams();
+    console.log(123);
+    // const dispatch = useDispatch()
+    // const data = useSelector(state=>state.data)
       return(
-        <div data-testid="contentBlock">
-          <div data-testid="contentData">
-            {data ? JSON.stringify(data):'暫無資料'}
+          <div>
+            id: {Id} 
           </div>
-          <button  data-testid="fetchContentDataBtn" type='button' onClick={()=>{
-            dispatch(fetchDataBegin())
-          }}>
-            獲得資料
-          </button>
-        </div>
       )
     }
 
-}
+
  export default Probe

@@ -6,6 +6,7 @@ import ProbeList from '../ProbeList';
 import styles from './index.scss';
 import Editprobe from '../Editprobe';
 import Dashboard from '../Dashboard';
+import Probe from '../Probe';
 
 
 const Main = () => (
@@ -20,6 +21,7 @@ const Main = () => (
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/probelist" component={ProbeList} />
+        <Route path="/detail/:Id" component={Probe} />
         <Route path="/editprobe" component={Editprobe} />
         {/* <Route path="/probe/:id" component={Editprobe} />
         <Route path="/list/:taskName" component={List} /> */}
