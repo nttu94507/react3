@@ -8,7 +8,6 @@ import Editprobe from '../Editprobe';
 import Dashboard from '../Dashboard';
 import Probe from '../Probe';
 
-
 const Main = () => (
   <div className={styles.main}>
     <div className={styles.left} >
