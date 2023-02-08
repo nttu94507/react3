@@ -97,7 +97,7 @@ const Probe_list = (d) => {
         case 0:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus0}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}
@@ -114,7 +114,7 @@ const Probe_list = (d) => {
         case 1:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus1}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}
@@ -131,7 +131,7 @@ const Probe_list = (d) => {
         case 2:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus2}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}
@@ -148,7 +148,7 @@ const Probe_list = (d) => {
         case 3:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus3}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}
@@ -165,7 +165,7 @@ const Probe_list = (d) => {
         case 4:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus4}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}
@@ -182,7 +182,7 @@ const Probe_list = (d) => {
         case 5:
           return (
             < div className={`${styles.probeCard} ${styles.probeCardButtomStasus5}`} title={task.note} >
-              <Link to={'/detail/' + task.id}>
+              <Link to={`/detail/${task.id}`}>
                 <div className={`${styles.probeCardStatus}`}>
                   <div className={styles.probeCardStatusLeft}>{task.type}</div>
                   {/* <ProbeCardStatus status={task.statuscode} /> */}

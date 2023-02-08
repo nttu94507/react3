@@ -8,26 +8,7 @@ import { useForm } from "react-hook-form";
 import styles from "./index.scss";
 
 
-const postcreateprobe = (data: any, dispatch: any) => {
-  // console.log(data);
-  const probe = {
-    probeId: data.probeId,
-    harddisk: data.harddiskdrive,
-    probetype: data.probetype,
-    note: data.note
-  }
-  // console.log(probe);
-  fetch('http://' + local + '/api/Probe/', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'content-type': 'application/json'
-    },
-  }).then((response) => {
-    // dispatch(postProbeDataBegin());
-    return response;
-  })
-}
+
 
 const probedata = (newprobe: any, harddisk: any, probetype: any, note: any) => {
   const probe = {
@@ -42,14 +23,40 @@ const probedata = (newprobe: any, harddisk: any, probetype: any, note: any) => {
 
 const Editprobe = (drop) => {
   const { btn, dis } = drop
-  const { id } = useParams();
+  // const { id } = useParams();
   const { register, getValues,reset } = useForm();
 
-  if (id) {
-    useEffect(() => {
-      dispatch(getProbeDataInfoBegin(id ? id : ''))
-    }, [])
+  // if (id) {
+  //   useEffect(() => {
+  //     dispatch(getProbeDataInfoBegin(id ? id : ''))
+  //   }, [])
+  // }
+
+  const postcreateprobe = (data: any, dispatch: any) => {
+    // console.log(data);
+    const probe = {
+      probeId: data.probeId,
+      harddisk: data.harddiskdrive,
+      probetype: data.probetype,
+      note: data.note
+    }
+    // console.log(probe);
+    fetch('http://' + local + '/api/Probe/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json'
+      },
+    }).then((response) => {
+      btn(dis);
+      reset();
+      // return response;
+    }).catch((err) => {
+      // console.log('錯誤:', err);
+    })
   }
+
+  
 
   const dispatch = useDispatch();
   const probe = useSelector(state => state.probe[0])
@@ -87,8 +94,6 @@ const Editprobe = (drop) => {
         <div className={styles.buttonDefault} onClick={() => {
           const value = getValues();
           postcreateprobe(value, dispatch);
-          btn(dis);
-          reset();
         }} >
           確認送出
         </div>
