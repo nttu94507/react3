@@ -2,8 +2,8 @@ import React from "react";
 
 
 
-export const Input = ({ register, name, }) => {
-    return <input {...register(name)} />;
+export const Input = ({ register, name, val}) => {
+    return <input {...register(name)} placeholder={val} />;
 }
 
 export function Select({ register, options, name, select }) {

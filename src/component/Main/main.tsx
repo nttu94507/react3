@@ -7,6 +7,7 @@ import styles from './index.scss';
 import Editprobe from '../Editprobe';
 import Dashboard from '../Dashboard';
 import Probe from '../Probe';
+import DeviceList from '../DeviceList/DeviceList';
 
 const Main = () => (
   <div className={styles.main}>
@@ -14,6 +15,7 @@ const Main = () => (
       <div className={styles.sidemenu}>
       <Link to="/" data-testid="homeLink"><div className={styles.sidemenuBtn}>首頁</div></Link>
       <Link to="/probelist" data-testid="probelistLink"><div className={styles.sidemenuBtn}>Probe 管理</div></Link>
+      <Link to="/devicelist" data-testid="DevicelistLink"><div className={styles.sidemenuBtn}>Device 管理</div></Link>
       </div>
     </div>
     <div className={styles.right}>
@@ -22,8 +24,8 @@ const Main = () => (
         <Route path="/probelist" component={ProbeList} />
         <Route path="/detail/:Id" component={Probe} />
         <Route path="/editprobe" component={Editprobe} />
-        {/* <Route path="/probe/:id" component={Editprobe} />
-        <Route path="/list/:taskName" component={List} /> */}
+        <Route path="/devicelist" component={DeviceList} />
+        <Route path="/list/:taskName" component={List} />
       </Switch>
     </div>
   </div>

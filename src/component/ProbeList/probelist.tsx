@@ -274,7 +274,7 @@ const main = () => {
         <hr></hr>
         <span>{`庫存數量: ${probelist.length}`}</span>
         <div className={styles.probelists}>
-          < Probe_list data={probelist}/>
+          < Probe_list data={ProbeTestData}/>
         </div>
       </div>
       <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>

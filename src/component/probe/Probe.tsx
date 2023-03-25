@@ -80,30 +80,24 @@ const Probe = () => {
         <div className={styles.cell}>
           <div className={styles.probeleft}>Probe ID:</div>
           <div className={styles.proberight}>
-            <Input name='probeId' register={register} />
-            {/* <input type='text' value={probeInfo['probeId']} disabled /> */}
+            <Input name='probeId' register={register} val= {probeInfo['probeId']}/>
           </div>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>狀態:</div>
           <div className={styles.proberight}>
             <Select register = {register} options={[{value:0,opttionName:'8GB'},{value:1,opttionName:'16GB'}]} name = 'status' select={probeInfo['statuscode']}/>
-            {/* <select {...register('status', { required: false })}>
-              <option value={""}>請選擇容量大小</option>
-              <option value={0} selected>8GB</option>
-              <option value={1}>16GB</option>
-            </select> */}
-            {/* <input type='text' value={probeInfo['status']} /> */}
           </div>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>硬碟:</div>
           <div className={styles.proberight}>
-            <select {...register('harddiskdrive', { required: false })}>
+          <Select register = {register} options={[{value:0,opttionName:'8GB'},{value:1,opttionName:'16GB'}]} name = 'harddiskdrive' select={probeInfo['hddcode']}/>
+            {/* <select {...register('harddiskdrive', { required: false })}>
               <option value={""} >請選擇容量大小</option>
               <option value={0} >8GB</option>
               <option value={1}>16GB</option>
-            </select>
+            </select> */}
             {/* <input type='text' defaultValue={probeInfo['harddiskdrive']} /> */}
           </div>
         </div>
