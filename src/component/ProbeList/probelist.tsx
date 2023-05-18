@@ -88,7 +88,7 @@ const ProbeData = [
 // }
 
 const Probe_list = (d) => {
-  // console.log(d.data.length)
+  console.log(d)
   if (d.data.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
@@ -234,9 +234,9 @@ const main = () => {
   const dispatch = useDispatch();
   const probelist = useSelector(state => state.probelist)
   const [display, setdisplay] = useState(0)
-  const [ProbeTestData, setProbeTestData] = useState(ProbeData)
+  const [ProbeTestData, setProbeTestData] = useState(probelist) //測試資料
 
-  console.log(probelist)
+  // console.log(probelist)
 
   const addProbedialog =(display)=>{
     switch (display) {
@@ -265,6 +265,7 @@ const main = () => {
           </div>
           <div className={styles.item6}>
             <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>search(e.target.value,ProbeTestData,setProbeTestData)}></input>
+             {/* 測試資料改這裡 */}
           </div>
           <div className={styles.item3}>
             {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
@@ -272,9 +273,11 @@ const main = () => {
           </div>
         </div>
         <hr></hr>
-        <span>{`庫存數量: ${probelist.length}`}</span>
+        <span>{`庫存數量: ${probelist.length}`}</span> 
+        {/* 測試資料改這裡 */}
         <div className={styles.probelists}>
-          < Probe_list data={ProbeTestData}/>
+          < Probe_list data={probelist}/>
+           {/* 測試資料改這裡 */}
         </div>
       </div>
       <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>
