@@ -24,6 +24,24 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
   }
 });
 
+export const SEARCH_PROBE_DATA_BEGIN = 'SEARCH_PROBE_DATA_BEGIN';
+
+export const searchProbeDataBegin = (keyword) =>({
+  type: SEARCH_PROBE_DATA_BEGIN,
+  payload: {
+    keyword,
+  }
+})
+
+export const SEARCH_PROBE_DATA_BEGIN_SUCCESS= 'SEARCH_PROBE_DATA_BEGIN_SUCCESS';
+
+export const searchProbeDataBeginSuccess = probe =>({
+  type: SEARCH_PROBE_DATA_BEGIN_SUCCESS,
+  payload: {
+    probe,
+  }
+})
+
 export const FETCH_INIT_DATA_BEGIN = 'FETCG_INIT_DATA_BRGIN';
 export const fetchInitDataBegin = () => ({
   type: FETCH_INIT_DATA_BEGIN, 
@@ -40,35 +58,35 @@ export const FETCG_INIT_DATA_SUCCESS = 'FETCG_INIT_DATA_SUCCESS';
   }
 });
 
-export const POST_PROBE_DATA_SUCCESS = 'POST_PROBE_DATA_SUCCESS';
+// export const POST_PROBE_DATA_SUCCESS = 'POST_PROBE_DATA_SUCCESS';
 
- export const postProbeDataSuccess = probe => ({
-  type: POST_PROBE_DATA_SUCCESS,
-  payload: {
-    probe,
-  }
-});
+//  export const postProbeDataSuccess = probe => ({
+//   type: POST_PROBE_DATA_SUCCESS,
+//   payload: {
+//     probe,
+//   }
+// });
 
-export const POST_PROBE_DATA_BEGIN = 'POST_PROBE_DATA_BEGIN';
+// export const POST_PROBE_DATA_BEGIN = 'POST_PROBE_DATA_BEGIN';
 
-export const postProbeDataBegin = () => ({
-  type: POST_PROBE_DATA_BEGIN, 
-})
+// export const postProbeDataBegin = () => ({
+//   type: POST_PROBE_DATA_BEGIN, 
+// })
 
-export const GET_PROBE_DATA_INFO_BEGIN = 'GET_PROBE_DATA_INFO_BEGIN';
+// export const GET_PROBE_DATA_INFO_BEGIN = 'GET_PROBE_DATA_INFO_BEGIN';
 
-export const getProbeDataInfoBegin = (id:any) => ({
-  type: GET_PROBE_DATA_INFO_BEGIN,
-  id
+// export const getProbeDataInfoBegin = (id:any) => ({
+//   type: GET_PROBE_DATA_INFO_BEGIN,
+//   id
   
-})
+// })
 
-export const GET_PROBE_DATA_INFO_SUCCESS = 'GET_PROBE_DATA_INFO_SUCCESS';
+// export const GET_PROBE_DATA_INFO_SUCCESS = 'GET_PROBE_DATA_INFO_SUCCESS';
 
- export const getProbeDataInfoSuccess = (probe:any) => ({
-  type: GET_PROBE_DATA_INFO_SUCCESS,
-  payload: {
-    probe,
-  }
-});
+//  export const getProbeDataInfoSuccess = (probe:any) => ({
+//   type: GET_PROBE_DATA_INFO_SUCCESS,
+//   payload: {
+//     probe,
+//   }
+// });
 

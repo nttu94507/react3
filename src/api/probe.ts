@@ -5,7 +5,7 @@
       .then((response) => response.json())
    )
 
-   export  const postProbeData = (id:any) =>(
-      fetch('http://'+local+'/api/Probe/'+(id?id:''))
+   export  const searchProbe = (key:any) =>(
+      fetch('http://'+local+'/api/Probe/search/'+(key?key:''))
         .then((response) => response.json())
      )

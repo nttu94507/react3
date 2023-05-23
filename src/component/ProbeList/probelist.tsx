@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProbe, postProbeDataBegin } from "../../action/probelist";
-import { fetchInitDataBegin } from "../../action/probelist"
+import { addProbe } from "../../action/probelist";
+import { fetchInitDataBegin,searchProbeDataBegin } from "../../action/probelist"
 import CrearteProbe from "../Editprobe/editprobe";
 import styles from "./index.scss"
 import { local } from "../../url/url";
@@ -10,17 +10,17 @@ import { take } from "redux-saga/effects";
 import Editprobe from "../Editprobe/editprobe";
 import { containeranalysis } from "googleapis/build/src/apis/containeranalysis";
 
-const removeProbe = (id: number, dispatch: any) => {
+// 'const removeProbe = (id: number, dispatch: any) => {
 
-  fetch(`http://${local}/api/Probe/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'content-type': 'application/json'
-    },
-  }).then((response) => {
-    dispatch(postProbeDataBegin())
-  })
-}
+//   fetch(`http://${local}/api/Probe/${id}`, {
+//     method: 'DELETE',
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//   }).then((response) => {
+//     dispatch(postProbeDataBegin())
+//   })
+// }'
 
 const ProbeData = [
   {
@@ -79,16 +79,8 @@ const ProbeData = [
   }
 ]
 
-// const addProbedialog = () => {
-//   return (
-//     <dialog className={styles.dialog}>
-//       <Editprobe />
-//     </dialog>
-//   )
-// }
-
 const Probe_list = (d) => {
-  console.log(d)
+  // console.log(d)
   if (d.data.length === 0) {
     return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
   } else {
@@ -105,7 +97,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status0}`}>出貨</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status0}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -122,7 +114,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status1}`}>在庫</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status1}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -139,7 +131,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status2}`}>預留</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status2}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -156,7 +148,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status3}`}>外借</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status3}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -173,7 +165,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status4}`}>故障</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status4}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -190,7 +182,7 @@ const Probe_list = (d) => {
                 </div>
                 <div className={styles.probeCardInfo}>
                   <div className={styles.probeCardInfoLeft}>{task.probeId}</div>
-                  <div className={`${styles.probeCardInfoRight} ${styles.status5}`}>內借</div>
+                  <div className={`${styles.probeCardInfoRight} ${styles.status5}`}>{task.status}</div>
                   {/* <div className={styles.probeCardInfoRight}>{task.probeId}</div> */}
                 </div>
               </Link>
@@ -202,30 +194,30 @@ const Probe_list = (d) => {
 }
 
 
-const search = (key,data,action) => {
-    if (key!=""){
-      const items = ProbeData.filter(val=>{
-        console.log((val.statuscode+'').includes(key))
-          if ((val.statuscode+'').includes(key)){
-            return val
-          }else if (val.note.includes(key)){
-            return val
-          }else if (val.type.includes(key)){
-            return val
-          }else if (val.harddiskdrive.includes(key)){
-            return val
-          }else if ((val.probeId+'').includes(key)){
-            return val
-          }else if (val.createdate.includes(key)){
-            return val
-          }
-        // return JSON.stringify(val.statuscode)==key
-      })
-      action(items)
-    }else{
-      action(ProbeData)
-    }
-  }
+// const search = (key,data,action) => {
+//     if (key!=""){
+//       const items = ProbeData.filter(val=>{
+//         console.log((val.statuscode+'').includes(key))
+//           if ((val.statuscode+'').includes(key)){
+//             return val
+//           }else if (val.note.includes(key)){
+//             return val
+//           }else if (val.type.includes(key)){
+//             return val
+//           }else if (val.harddiskdrive.includes(key)){
+//             return val
+//           }else if ((val.probeId+'').includes(key)){
+//             return val
+//           }else if (val.createdate.includes(key)){
+//             return val
+//           }
+//         // return JSON.stringify(val.statuscode)==key
+//       })
+//       action(items)
+//     }else{
+//       action(ProbeData)
+//     }
+//   }
 
 
 
@@ -248,7 +240,6 @@ const main = () => {
         return
     }
   }
-  // console.log(ProbeTestData)
   useEffect(() => {
     dispatch(fetchInitDataBegin())
   }, [])
@@ -264,7 +255,7 @@ const main = () => {
             <button>P110</button>
           </div>
           <div className={styles.item6}>
-            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>search(e.target.value,ProbeTestData,setProbeTestData)}></input>
+            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>dispatch(searchProbeDataBegin(e.target.value,probelist))}></input>
              {/* 測試資料改這裡 */}
           </div>
           <div className={styles.item3}>

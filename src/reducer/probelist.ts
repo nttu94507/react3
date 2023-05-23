@@ -36,20 +36,20 @@ const probeReducer = (state = initProbes, action: any) => {
                       ...action.payload.probe,
                 ]
             };
-        case actions.POST_PROBE_DATA_SUCCESS:
+        case actions.SEARCH_PROBE_DATA_BEGIN_SUCCESS:
             return {
                 ...state,
                 probelist: [
                     ...action.payload.probe,
                 ]
             };
-        case actions.GET_PROBE_DATA_INFO_SUCCESS:
-            return {
-               ...state,
-               probe: [
-                    ...action.payload.probe,
-                ]
-            };
+        // case actions.GET_PROBE_DATA_INFO_SUCCESS:
+        //     return {
+        //        ...state,
+        //        probe: [
+        //             ...action.payload.probe,
+        //         ]
+        //     };
         default:
             return state;
     }
