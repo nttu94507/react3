@@ -37,41 +37,15 @@ import { Input, Select } from "../Form/Form";
 // }
 const Probe = () => {
   const { Id } = useParams();
-  const [probeInfo, setProbeInfo] = useState('')
+  // const [probeInfo, setProbeInfo] = useState('')
+  const probeInfo = useSelector(state=>state.probeInfo)
   const dispatch = useDispatch();
   const { register, getValues, reset } = useForm();
-
-  const getJSON = async (url) => {
-    const response = await fetch(url, {
-      method: 'get',
-      headers: {
-        'content-type': 'application/json'
-      },
-    }).then((jsonData) => {
-      // console.log(jsonData);
-      // 要return 的話寫在這
-      return jsonData.json()
-        .then((json) => {
-          setProbeInfo(json)
-          // return json
-        })
-
-    }).catch((err) => {
-      // console.log('錯誤:', err);
-    })
-  }
-
-
-  // useEffect(() => {
-  //   getJSON(`http://${local}/api/Probe/${Id}`)
-  // }, [])
-
 
   useEffect(() => {
     dispatch(getProbeInfoBegin(Id))
     // console.log('test:',probeInfo)
   }, [])
-
 
   return (
     <div className={styles.bg}>

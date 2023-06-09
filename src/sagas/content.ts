@@ -1,8 +1,9 @@
-import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { apply, call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { FETCH_DATA_BEGIN, fetchDataSuccess, FETCH_INIT_DATA_BEGIN, fetchInitDataSuccess, ADD_PROBE, SEARCH_PROBE_DATA_BEGIN, searchProbeDataBeginSuccess,GET_PROBE_INFO_BEGIN,getProbeInfoSuccess } from "../action/probelist";
 import { getContent } from '../api/content';
 import { getProbe, getProbeInfo } from "../api/probe";
 import { useSelector } from "react-redux";
+import { local } from "../url/url";
 
 export function* fetchData() {
     const probe = yield call(getProbe);
@@ -44,12 +45,13 @@ export function* searchPrboeData(key) {
     }
 }
 
-export function* fetchProbeData() {
-    // const keyword = key.payload.keyword;
-    const probe = yield call(getProbeInfo);
+export function* fetchProbeData(key) {
+    const keyword = key.payload.keyword;
+    const probe = yield call(getProbeInfo,keyword);
 
     yield put(getProbeInfoSuccess(probe ? probe : { probeId: 'none', owner: 'none' }));
 }
+
 
 function* mySaga() {
     yield takeLatest(FETCH_DATA_BEGIN, fetchData)

@@ -5,7 +5,7 @@
       .then((response) => response.json())
    )
 
-   export  const getProbeInfo = (key:any) =>(
-      fetch('http://'+local+'/api/Probe/detail/2')
+   export  const getProbeInfo = (key) =>(
+      fetch(`http://${local}/api/Probe/detail/${key}`)
         .then((response) => response.json())
-     )
+   )

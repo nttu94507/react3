@@ -226,7 +226,7 @@ const main = () => {
   const dispatch = useDispatch();
   const probelist = useSelector(state => state.probelist)
   const [display, setdisplay] = useState(0)
-  const [ProbeTestData, setProbeTestData] = useState(probelist) //測試資料
+  // const [ProbeTestData, setProbeTestData] = useState(probelist) //測試資料
 
   // console.log(probelist)
 
@@ -255,7 +255,7 @@ const main = () => {
             <button>P110</button>
           </div>
           <div className={styles.item6}>
-            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>dispatch(searchProbeDataBegin(e.target.value,probelist))}></input>
+            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>dispatch(searchProbeDataBegin(e.target.value))}></input>
              {/* 測試資料改這裡 */}
           </div>
           <div className={styles.item3}>
