@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from "react-router-dom";
-import { fetchDataBegin } from '../../action/probelist';
+import { fetchDataBegin,getProbeInfoBegin } from '../../action/probelist';
 import styles from './index.scss';
 import { local } from "../../url/url";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../Form/Form";
 
 
-const getProbeInfo = (id, set) => {
+// const getProbeInfo = (id, set) => {
 
-  fetch(`http://${local}/api/Probe/${id}`, {
-    method: 'get',
-    headers: {
-      'content-type': 'application/json'
-    },
-  }).then((response) => {
-    // console.log(response.json())
-    return response.json();
-  }).then((data) => {
-    set(data)
-    // return data;
-  })
-}
+//   fetch(`http://${local}/api/Probe/${id}`, {
+//     method: 'get',
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//   }).then((response) => {
+//     // console.log(response.json())
+//     return response.json();
+//   }).then((data) => {
+//     set(data)
+//     // return data;
+//   })
+// }
 
 // export const  Select = ({ register, options, name, ...rest}) => {
 //   return (
@@ -38,6 +38,7 @@ const getProbeInfo = (id, set) => {
 const Probe = () => {
   const { Id } = useParams();
   const [probeInfo, setProbeInfo] = useState('')
+  const dispatch = useDispatch();
   const { register, getValues, reset } = useForm();
 
   const getJSON = async (url) => {
@@ -61,14 +62,15 @@ const Probe = () => {
   }
 
 
+  // useEffect(() => {
+  //   getJSON(`http://${local}/api/Probe/${Id}`)
+  // }, [])
+
+
   useEffect(() => {
-    getJSON(`http://${local}/api/Probe/${Id}`)
+    dispatch(getProbeInfoBegin(Id))
+    // console.log('test:',probeInfo)
   }, [])
-
-
-  useEffect(() => {
-    console.log('test:',probeInfo)
-  }, [probeInfo])
 
 
   return (

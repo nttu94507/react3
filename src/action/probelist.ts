@@ -58,14 +58,25 @@ export const FETCG_INIT_DATA_SUCCESS = 'FETCG_INIT_DATA_SUCCESS';
   }
 });
 
-// export const POST_PROBE_DATA_SUCCESS = 'POST_PROBE_DATA_SUCCESS';
 
-//  export const postProbeDataSuccess = probe => ({
-//   type: POST_PROBE_DATA_SUCCESS,
-//   payload: {
-//     probe,
-//   }
-// });
+
+export const GET_PROBE_INFO_BEGIN = 'GET_PROBE_INFO_BEGIN';
+
+ export const getProbeInfoBegin = (keyword) => ({
+  type: GET_PROBE_INFO_BEGIN,
+  payload: {
+    keyword,
+  }
+});
+
+export const GET_PROBE_INFO_SUCCESS = 'GET_PROBE_INFO_SUCCESS';
+
+ export const getProbeInfoSuccess = (probe) => ({
+  type: GET_PROBE_INFO_SUCCESS,
+  payload: {
+    probe,
+  }
+});
 
 // export const POST_PROBE_DATA_BEGIN = 'POST_PROBE_DATA_BEGIN';
 

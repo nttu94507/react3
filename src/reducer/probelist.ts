@@ -6,8 +6,9 @@ const initProbes:Iprobe = {
     probelist: [
     ],
     probe:[
-        
-    ]
+    ],
+    probeInfo:[
+    ],
 }
 
 
@@ -43,13 +44,13 @@ const probeReducer = (state = initProbes, action: any) => {
                     ...action.payload.probe,
                 ]
             };
-        // case actions.GET_PROBE_DATA_INFO_SUCCESS:
-        //     return {
-        //        ...state,
-        //        probe: [
-        //             ...action.payload.probe,
-        //         ]
-        //     };
+        case actions.GET_PROBE_INFO_SUCCESS:
+            return {
+               ...state,
+               probeInfo: [
+                    ...action.payload.probe,
+                ]
+            };
         default:
             return state;
     }
