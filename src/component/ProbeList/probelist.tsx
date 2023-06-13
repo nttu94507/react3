@@ -250,13 +250,13 @@ const main = () => {
     <div className={styles.probe}>
       <div data-testid="probelistBlock" className={styles.probelistBlock}>
         <div className={styles.probelistItem}>
-          <div className={styles.item3}>
-            <button>全部設備</button>
-            <button>P110</button>
-          </div>
           <div className={styles.item6}>
             <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>dispatch(searchProbeDataBegin(e.target.value))}></input>
              {/* 測試資料改這裡 */}
+          </div>
+          <div className={styles.item3}>
+            <button>全部設備</button>
+            <button>P110</button>
           </div>
           <div className={styles.item3}>
             {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}

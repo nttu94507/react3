@@ -14,16 +14,16 @@
     justify-content: center;
     width: 30%;
     min-width: 500px;
-    height: 50%;
-    min-height: 550px;
+    // height: 50%;
+    // min-height: 550px;
     align-items: center;
     border-radius: 10px ;
-    padding: 20px 0;
+    padding: 20px 0 0 0;
 }
 
 .probeleft{
     background-color: none;
-    flex: 2;
+    flex: 4;
 }
 
 .proberight{
@@ -38,6 +38,8 @@
     justify-content: space-between;
     align-items: center;
     flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .title{

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { postProbeDataBegin } from "../../action/probelist";
 import { local } from "../../url/url";
-import { useParams } from "react-router-dom";
-import { getProbeDataInfoBegin } from '../../action/probelist'
 import { useForm } from "react-hook-form";
 import styles from "./index.scss";
 
@@ -23,24 +20,11 @@ const probedata = (newprobe: any, harddisk: any, probetype: any, note: any) => {
 
 const Editprobe = (drop) => {
   const { btn, dis } = drop
-  // const { id } = useParams();
   const { register, getValues,reset } = useForm();
-
-  // if (id) {
-  //   useEffect(() => {
-  //     dispatch(getProbeDataInfoBegin(id ? id : ''))
-  //   }, [])
-  // }
+  const dispatch = useDispatch();
 
   const postcreateprobe = (data: any, dispatch: any) => {
-    // console.log(data);
-    const probe = {
-      probeId: data.probeId,
-      harddisk: data.harddiskdrive,
-      probetype: data.probetype,
-      note: data.note
-    }
-    // console.log(probe);
+
     fetch('http://' + local + '/api/Probe/', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -56,10 +40,6 @@ const Editprobe = (drop) => {
     })
   }
 
-  
-
-  const dispatch = useDispatch();
-  const probe = useSelector(state => state.probe[0])
 
   return (
     <div className={styles.editprobe}>
