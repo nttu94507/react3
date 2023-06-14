@@ -32,7 +32,6 @@ const Editprobe = (drop) => {
     <div className={styles.editprobe}>
       <div className={`${styles.editlist} ${styles.editprobefontsize}`}>
         <p>新增 Probe</p>
-        <div>X</div>
       </div>
       <div className={styles.editlist}>
         <input {...register('probeId', { required: false })} placeholder={"  請輸入Probe ID"} />

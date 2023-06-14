@@ -11,17 +11,22 @@ $color5: #3c00cf7d;
 
 .probelistBlock {
     // background-color: #6FB7B7;
-    width: 97%;
-    margin: 20px 0px;
+    // width: 97%;
+    // margin: 20px 0px;
     border-radius: 10px;
-    padding: 20px;
+    // padding: 20px;
     height: 100vh;
     // display: flex;
 }
 
 .probelistItem {
     display: flex;
-    margin: 0 0 15px 0;
+    padding: 20px 0 10px 0;
+}
+
+.probelistContent{
+    padding: 10px 0 10px 0;
+    border-top: solid #4e4e4e;
 }
 
 .item3 {
@@ -188,4 +193,30 @@ td {
 
 .hidden{
     display: none;
+}
+
+.buttonDefault {
+    font-family: '思源黑體';
+    display: flex;
+    width: 30%;
+    height: 40px;
+    margin: 5px;
+    color: #fff;
+    // text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    background-color: #0162A9;
+    border: solid 1.5px #0162A9;
+
+}
+
+.buttonDefault:active {
+    background-color: #fff;
+    border: solid 1.5px #0162A9;
+    color: #336699;
+
+    // border: solid 2px #85d457;
+    // font-weight: bold;
 }

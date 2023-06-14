@@ -1,3 +1,4 @@
+export const buttonDefault: string;
 export const dialog: string;
 export const hidden: string;
 export const item3: string;
@@ -17,6 +18,7 @@ export const probeCardStatus: string;
 export const probeCardStatusLeft: string;
 export const probeCardStatusRight: string;
 export const probelistBlock: string;
+export const probelistContent: string;
 export const probelistItem: string;
 export const probelists: string;
 export const searchBar: string;

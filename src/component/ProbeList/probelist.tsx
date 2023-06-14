@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProbe } from "../../action/probelist";
-import { fetchInitDataBegin,searchProbeDataBegin } from "../../action/probelist"
+import { fetchInitDataBegin, searchProbeDataBegin } from "../../action/probelist"
 import CrearteProbe from "../Editprobe/editprobe";
 import styles from "./index.scss"
 import { local } from "../../url/url";
@@ -230,7 +230,7 @@ const main = () => {
 
   // console.log(probelist)
 
-  const addProbedialog =(display)=>{
+  const addProbedialog = (display) => {
     switch (display) {
       case 0:
         setdisplay(1)
@@ -251,8 +251,9 @@ const main = () => {
       <div data-testid="probelistBlock" className={styles.probelistBlock}>
         <div className={styles.probelistItem}>
           <div className={styles.item6}>
-            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e)=>dispatch(searchProbeDataBegin(e.target.value))}></input>
-             {/* 測試資料改這裡 */}
+            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e) => dispatch(searchProbeDataBegin(e.target.value))}></input>
+            {/* 測試資料改這裡 */}
+            <span>{`庫存數量: ${probelist.length}`}</span>
           </div>
           <div className={styles.item3}>
             <button>全部設備</button>
@@ -260,19 +261,18 @@ const main = () => {
           </div>
           <div className={styles.item3}>
             {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
-            <div onClick={()=>addProbedialog(display)}>新增Probe </div>
+            <div onClick={() => addProbedialog(display)} className={styles.buttonDefault}>新增Probe </div>
           </div>
         </div>
-        <hr></hr>
-        <span>{`庫存數量: ${probelist.length}`}</span> 
-        {/* 測試資料改這裡 */}
-        <div className={styles.probelists}>
-          < Probe_list data={probelist}/>
-           {/* 測試資料改這裡 */}
+        <div className={styles.probelistContent}>
+          <div className={styles.probelists}>
+            < Probe_list data={probelist} />
+            {/* 測試資料改這裡 */}
+          </div>
         </div>
       </div>
-      <div id="dialog" className={`${styles.dialog} ${display==1?"":styles.hidden}`}>
-        <Editprobe btn={addProbedialog} dis={display}/>
+      <div id="dialog" className={`${styles.dialog} ${display == 1 ? "" : styles.hidden}`}>
+        <Editprobe btn={addProbedialog} dis={display} />
       </div>
     </div>
   )
