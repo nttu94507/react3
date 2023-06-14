@@ -3,20 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { local } from "../../url/url";
 import { useForm } from "react-hook-form";
 import styles from "./index.scss";
-
-
-
-
-const probedata = (newprobe: any, harddisk: any, probetype: any, note: any) => {
-  const probe = {
-    probeId: newprobe,
-    // owner: owner,
-    harddisk: harddisk,
-    probetype: probetype,
-    note: note
-  }
-  return probe
-}
+import {DateInput} from "../Form/form"
 
 const Editprobe = (drop) => {
   const { btn, dis } = drop
@@ -45,6 +32,7 @@ const Editprobe = (drop) => {
     <div className={styles.editprobe}>
       <div className={`${styles.editlist} ${styles.editprobefontsize}`}>
         <p>新增 Probe</p>
+        <div>X</div>
       </div>
       <div className={styles.editlist}>
         <input {...register('probeId', { required: false })} placeholder={"  請輸入Probe ID"} />
@@ -68,9 +56,16 @@ const Editprobe = (drop) => {
         </select>
       </div>
       <div className={styles.editlist}>
+        <input {...register('price', { required: false })} placeholder={"  請輸入單價"} />
+      </div>
+      <div className={styles.editlist}>
         <input {...register('note', { required: false })} placeholder={"  請輸入備註"} />
       </div>
-      <div className={`${styles.editlist} `}>
+      <div className={styles.editlist}>
+        {/* <input {...register('note', { required: false })} placeholder={"  請輸入備註"} /> */}
+        <DateInput  name='manufacture' register={register}/>
+      </div>
+      <div className={styles.editlist}>
         <div className={styles.buttonDefault} onClick={() => {
           const value = getValues();
           postcreateprobe(value, dispatch);

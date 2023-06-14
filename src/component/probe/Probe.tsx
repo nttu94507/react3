@@ -5,7 +5,8 @@ import { fetchDataBegin, getProbeInfoBegin } from '../../action/probelist';
 import styles from './index.scss';
 import { local } from "../../url/url";
 import { useForm } from "react-hook-form";
-import { Input, Select,defaultInput } from "../Form/Form";
+import { Input, Select } from "../Form/form";
+import { Link } from "react-router-dom";
 
 
 // const getProbeInfo = (id, set) => {
@@ -49,14 +50,18 @@ const Probe = () => {
   return (
     <div className={styles.bg}>
       <div className={styles.probeblock}>
-        <div className={`${styles.title} `}>
-          <p>Probe資訊</p>
+        <div className={styles.cell}>
+          <div></div>
+          <div className={`${styles.title} `}>
+            <p>Probe資訊</p>
+          </div>
+          <Link to={`/probelist`}>X</Link>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>Probe ID:</div>
           <div className={styles.proberight}>
-            <div>{probeInfo?<Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''}/>:<defaultInput name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''}/>}</div>
-      {/* <Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} /> */}
+            <div>{probeInfo ? <Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} /> : <defaultInput name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} />}</div>
+            {/* <Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} /> */}
           </div>
         </div>
         <div className={styles.cell}>
@@ -84,11 +89,11 @@ const Probe = () => {
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>備註</div>
-          <div className={styles.proberight}><input type='text' defaultValue={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div>
+          <div className={styles.proberight}><input type='text' Value={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>單價</div>
-          <div className={styles.proberight}><div>{probeInfo ? probeInfo['price'] : ''} </div></div>
+          <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['price'] : ''} placeholder={probeInfo ? probeInfo['price'] : ''} /><div></div></div>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>製造日期:</div>

@@ -8,6 +8,10 @@ export const DeInput = ({ register, name, val}) => {
     return <input {...register(name)} placeholder={val} defaultValue={val} />;
 }
 
+export const DateInput = ({ register, name}) => {
+    return <input {...register(name)} type="datetime-local"  />;
+}
+
 export function Select({ register, options, name, select }) {
     return (
         <select {...register(name)} >
