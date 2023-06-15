@@ -49,6 +49,24 @@ input:focus {
     outline: none;
 }
 
+Textarea{
+    display: flex;
+    border: 1px  solid #336699;
+    border-radius: 10px ;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5%;
+    width: 90%;
+    height: 80px;
+}
+
+Textarea:focus{
+    border: 3px solid #336699;
+    outline: none;
+}
+
+
 select {
     appearance:none;
     width: 90%;

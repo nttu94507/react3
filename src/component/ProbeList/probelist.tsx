@@ -251,7 +251,7 @@ const main = () => {
       <div data-testid="probelistBlock" className={styles.probelistBlock}>
         <div className={styles.probelistItem}>
           <div className={styles.item6}>
-            <input placeholder={"  請輸入關鍵字"} className={styles.searchBar} onChange={(e) => dispatch(searchProbeDataBegin(e.target.value))}></input>
+            <input placeholder={"  搜尋Probe"} className={styles.searchBar} onChange={(e) => dispatch(searchProbeDataBegin(e.target.value))}></input>
             {/* 測試資料改這裡 */}
             <span>{`庫存數量: ${probelist.length}`}</span>
           </div>

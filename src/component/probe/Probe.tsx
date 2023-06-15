@@ -5,7 +5,7 @@ import { fetchDataBegin, getProbeInfoBegin } from '../../action/probelist';
 import styles from './index.scss';
 import { local } from "../../url/url";
 import { useForm } from "react-hook-form";
-import { Input, Select } from "../Form/form";
+import { Input, Select,Textarea } from "../Form/form";
 import { Link } from "react-router-dom";
 
 
@@ -87,13 +87,6 @@ const Probe = () => {
           {/* <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['ownerName'] : ''} /></div> */}
         </div>
         <div className={styles.cell}>
-          <div className={styles.probeleft}>備註</div>
-          <div className={styles.proberight}>
-            <Input name='note' register={register} val={probeInfo ? probeInfo['note'] : ''} />
-          </div>
-          {/* <div className={styles.proberight}><input type='text' name='note' defaultValue={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div> */}
-        </div>
-        <div className={styles.cell}>
           <div className={styles.probeleft}>單價</div>
           <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['price'] : ''} placeholder={probeInfo ? probeInfo['price'] : ''} /><div></div></div>
         </div>
@@ -108,6 +101,14 @@ const Probe = () => {
         <div className={styles.cell}>
           <div className={styles.probeleft}>last updated</div>
           <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['lastupdate'] : ''} /></div>
+        </div>
+        <div className={styles.cell}>
+          <div className={styles.probeleft}>備註</div>
+          <div className={styles.proberight}>
+  
+            <Textarea name='note' register={register} val={probeInfo ? probeInfo['note'] : ''} />
+          </div>
+          {/* <div className={styles.proberight}><input type='text' name='note' defaultValue={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div> */}
         </div>
         <div className={`${styles.cell} ${styles.justifyCenter} `}>
           <div className={styles.buttonDefault} onClick={() => {

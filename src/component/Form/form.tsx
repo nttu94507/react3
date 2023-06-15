@@ -4,8 +4,8 @@ export const Input = ({ register, name, val}) => {
     return <input {...register(name)} placeholder={val} Value={val} />;
 }
 
-export const DeInput = ({ register, name, val}) => {
-    return <input {...register(name)} placeholder={val} defaultValue={val} />;
+export const Textarea = ({ register, name, val}) => {
+    return <textarea {...register(name)} placeholder={val} value={val} />;
 }
 
 export const DateInput = ({ register, name}) => {

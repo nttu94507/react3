@@ -58,6 +58,7 @@ const Editprobe = (drop) => {
         <input {...register('price', { required: false })} placeholder={"  請輸入單價"} />
       </div>
       <div className={styles.editlist}>
+      {/* <Textarea></Textarea> */}
         <input {...register('note', { required: false })} placeholder={"  請輸入備註"} />
       </div>
       <div className={styles.editlist}>
