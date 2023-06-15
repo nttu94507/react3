@@ -99,7 +99,7 @@ const Probe = () => {
           <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['createdate'] : ''} /></div>
         </div>
         <div className={styles.cell}>
-          <div className={styles.probeleft}>last updated</div>
+          <div className={styles.probeleft}>最後更新:</div>
           <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['lastupdate'] : ''} /></div>
         </div>
         <div className={styles.cell}>

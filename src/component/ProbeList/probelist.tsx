@@ -253,11 +253,11 @@ const main = () => {
           <div className={styles.item6}>
             <input placeholder={"  搜尋Probe"} className={styles.searchBar} onChange={(e) => dispatch(searchProbeDataBegin(e.target.value))}></input>
             {/* 測試資料改這裡 */}
-            <span>{`庫存數量: ${probelist.length}`}</span>
+            <span className={styles.searchBar}>{`庫存數量: ${probelist.length}`}</span>
           </div>
           <div className={styles.item3}>
-            <button>全部設備</button>
-            <button>P110</button>
+            {/* <button>全部設備</button>
+            <button>P110</button> */}
           </div>
           <div className={styles.item3}>
             {/* <span>{`庫存數量: ${ProbeTestData.length}`}</span> */}
