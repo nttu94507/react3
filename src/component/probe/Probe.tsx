@@ -61,6 +61,7 @@ const Probe = () => {
           <div className={styles.probeleft}>Probe ID:</div>
           <div className={styles.proberight}>
             <div>{probeInfo ? <Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} /> : <defaultInput name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} />}</div>
+            <div className={styles.hidden}>{probeInfo ? <Input name='id' register={register} val={probeInfo ? probeInfo['id'] : ''} /> : ''}</div>
             {/* <Input name='probeId' register={register} val={probeInfo ? probeInfo['probeId'] : ''} /> */}
           </div>
         </div>
@@ -75,10 +76,8 @@ const Probe = () => {
           </div>
         </div>
         <div className={styles.cell}>
-          <div className={styles.probeleft}>狀態:</div>
-          <div className={styles.proberight}>
-            <Select register={register} options={[{ value: 0, opttionName: '出貨' }, { value: 1, opttionName: '庫存' }, { value: 2, opttionName: '預留' }, { value: 3, opttionName: '借測' }, { value: 4, opttionName: '故障' }, { value: 5, opttionName: '內借' }]} name='status' select={probeInfo ? probeInfo['statuscode'] : 0} />
-          </div>
+          <div className={styles.probeleft}>狀態</div>
+          <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['status'] : ''} /></div>
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>持有者</div>
@@ -89,7 +88,10 @@ const Probe = () => {
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>備註</div>
-          <div className={styles.proberight}><input type='text' Value={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div>
+          <div className={styles.proberight}>
+            <Input name='note' register={register} val={probeInfo ? probeInfo['note'] : ''} />
+          </div>
+          {/* <div className={styles.proberight}><input type='text' name='note' defaultValue={probeInfo ? probeInfo['note'] : ''} placeholder={probeInfo ? probeInfo['note'] : ''} /></div> */}
         </div>
         <div className={styles.cell}>
           <div className={styles.probeleft}>單價</div>
@@ -107,8 +109,26 @@ const Probe = () => {
           <div className={styles.probeleft}>last updated</div>
           <div className={styles.proberight}><input type='text' value={probeInfo ? probeInfo['lastupdate'] : ''} /></div>
         </div>
+        <div className={`${styles.cell} ${styles.justifyCenter} `}>
+          <div className={styles.buttonDefault} onClick={() => {
+            const data = getValues();
+            console.log(data);
+            fetch(`http://${local}/api/Probe/update`, {
+              method: 'POST',
+              body: JSON.stringify(data),
+              headers: {
+                'content-type': 'application/json'
+              },
+            }).then((response) => {
+              alert('修改完成');
+              console.log(response.json())
+            }).catch((err) => {
+              alert('修改失敗')
+            })
+          }}>確認修改</div>
+        </div>
       </div>
-    </div>
+    </div >
   )
 }
 

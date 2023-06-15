@@ -50,3 +50,34 @@
     justify-content: center;
     margin: 25px 0;
 }
+
+.buttonDefault {
+    font-family: '思源黑體';
+    display: flex;
+    width: 30%;
+    height: 30px;
+    margin: 5px;
+    color: #fff;
+    // text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    background-color: #72ade7;
+    border: solid 1.5px #72ade7;
+
+}
+
+.buttonDefault:active {
+    background-color: #fff;
+    border: solid 1.5px #72ade7;
+    color: #336699;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}

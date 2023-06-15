@@ -69,7 +69,7 @@ const Editprobe = (drop) => {
           const value = getValues();
           postcreateprobe(value, dispatch);
         }} >
-          確認送出
+          新增
         </div>
         <div className={styles.buttonDefault} onClick={() => {
           btn(dis)
