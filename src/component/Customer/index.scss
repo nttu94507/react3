@@ -1,0 +1,11 @@
+.customer {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.customerlist{
+    background-color: green;
+    flex:1 1 auto;
+}
