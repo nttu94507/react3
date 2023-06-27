@@ -12,6 +12,10 @@ a {
     }
 }   
 
+div,span,p{
+    caret-color: transparent;
+}
+
 .main {
     height:100% ;
     display: flex;

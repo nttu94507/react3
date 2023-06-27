@@ -1,11 +1,131 @@
 .customer {
     // width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    flex:1 1 auto;
 }
 
-.customerlist{
-    background-color: green;
+.customeroption{
     flex:1 1 auto;
+    // background-color: #4e4e4e;
+    display: flex;
+    // padding: 20px 0 10px 0;
+
+
+}
+
+.customercontent{
+    flex: 20 1 auto;
+    border-top: solid 3px #333;
+}
+
+
+.item6{
+    flex: 6 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+
+.item3{
+    flex: 3 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar{
+    display: flex;
+}
+
+.buttonDefault{
+    font-family: '思源黑體';
+    display: flex;
+    width: 30%;
+    height: 40px;
+    margin: 5px;
+    color: #fff;
+    // text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    background-color: #0162A9;
+    border: solid 1.5px #0162A9;
+}
+
+.customerLists{
+    display: flex;
+    // display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.card {
+    // flex: 1;
+    background-color: black;
+    max-width: 18%;
+    min-width: 18%;
+    min-height: 50px;
+    flex: 1;
+    // background-color: #00afc152;
+    background-color: #fff;
+    margin: 0.5% 0.8%;
+    border-radius: 12px;
+    overflow: "scroll";
+    height: 150px;
+    border: solid 2px #7d7d7d;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardupper{
+    flex:1 1 auto;
+    // background-color: yellowgreen;
+    display: flex;
+    flex-direction:row;
+}
+.cardbuttom{
+    flex:1 1 auto;
+    // background-color: brown;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.carduppertittle{
+    font-size: larger;
+    font-weight: bolder;
+    color: #7d7d7d;
+    margin: 10px 10px ;
+    flex:5 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.cardupperstatus{
+    font-weight:bold;
+    color: #7d7d7d;
+    // border: solid 2px #7d7d7d;
+    // border-radius: 10px ;
+    padding: 5px ;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cardupperstatusborder{
+    border: solid 2px #7d7d7d;
+    border-radius: 5px ;
+    padding: 3px ;
+}
+
+.cardbuttomitem{
+    flex:1 1 auto;
+    // background-color: brown;
+    margin: 0 10px;
+    font-weight: bold;
+    color: #3d3d3d;
 }
