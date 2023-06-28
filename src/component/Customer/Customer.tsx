@@ -8,7 +8,7 @@ import {getCustomerBegin}from '../../action/customerlist';
 
 const Customer = () => {
     const dispatch = useDispatch();
-    // const CustomerList = useSelector(state => state.CustomerList)
+    const CustomerList = useSelector(state => state.customerlist)
     // const [Customers,setCustomers] = useState();
 
     useEffect(() => {
