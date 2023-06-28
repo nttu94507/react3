@@ -1,11 +1,21 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./index.scss"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { symbol } from "prop-types";
+import {getCustomerBegin}from '../../action/customerlist';
+ 
 
 
 const Customer = () => {
     const dispatch = useDispatch();
+    // const CustomerList = useSelector(state => state.CustomerList)
+    // const [Customers,setCustomers] = useState();
+
+    useEffect(() => {
+        dispatch(getCustomerBegin())
+    })
+
+
     return (
         <div className={styles.customer}>
             <div className={styles.customeroption}>
