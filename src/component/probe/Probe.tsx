@@ -39,7 +39,7 @@ import { Link } from "react-router-dom";
 const Probe = () => {
   const { Id } = useParams();
   // const [probeInfo, setProbeInfo] = useState('')
-  const probeInfo = useSelector(state => state.probeInfo[0])
+  const probeInfo = useSelector(state => state.probeReducer.probeInfo[0])
   const dispatch = useDispatch();
   const { register, getValues, reset } = useForm();
 
