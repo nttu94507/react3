@@ -3,18 +3,22 @@ import styles from "./index.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { symbol } from "prop-types";
 import {getCustomerBegin}from '../../action/customerlist';
+import CustomerCard from "./CustomerCard";
  
+
+
 
 
 const Customer = () => {
     const dispatch = useDispatch();
-    const CustomerList = useSelector(state => state.customerlist)
+    const CustomerList = useSelector(state => state.customerReducer)
     // const [Customers,setCustomers] = useState();
 
     useEffect(() => {
         dispatch(getCustomerBegin())
-    })
+    },[])
 
+    console.log(CustomerList)
 
     return (
         <div className={styles.customer}>
@@ -30,7 +34,8 @@ const Customer = () => {
                 </div>
             </div>
             <div className={styles.customercontent}>
-                <div className={styles.customerLists}>
+                <CustomerCard customers={CustomerList.customerlist}/>
+                {/* <div className={styles.customerLists}>
                     <div className={styles.card}>
                         <div className={styles.cardupper}>
                             <div className={styles.carduppertittle}>松下產業</div>
@@ -143,7 +148,7 @@ const Customer = () => {
                             <div className={styles.cardbuttomitem}>FAE: Jason</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
 

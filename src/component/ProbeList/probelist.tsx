@@ -224,7 +224,7 @@ const Probe_list = (d) => {
 
 const main = () => {
   const dispatch = useDispatch();
-  const probelist = useSelector(state => state.probelist)
+  const probelist = useSelector(state => state.probeReducer)
   const [display, setdisplay] = useState(0)
   // const [ProbeTestData, setProbeTestData] = useState(probelist) //測試資料
 
@@ -253,7 +253,7 @@ const main = () => {
           <div className={styles.item6}>
             <input placeholder={"  搜尋Probe"} className={styles.searchBar} onChange={(e) => dispatch(searchProbeDataBegin(e.target.value))}></input>
             {/* 測試資料改這裡 */}
-            <span className={styles.searchBar}>{`庫存數量: ${probelist.length}`}</span>
+            <span className={styles.searchBar}>{`庫存數量: ${probelist.probelist.length}`}</span>
           </div>
           <div className={styles.item3}>
             {/* <button>全部設備</button>
@@ -266,7 +266,7 @@ const main = () => {
         </div>
         <div className={styles.probelistContent}>
           <div className={styles.probelists}>
-            < Probe_list data={probelist} />
+            < Probe_list data={probelist.probelist} />
             {/* 測試資料改這裡 */}
           </div>
         </div>
