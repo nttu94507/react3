@@ -1,11 +1,12 @@
 import React from "react";
+import styles from './index.scss'
 
 export const Input = ({ register, name, val}) => {
     return <input {...register(name)} placeholder={val} Value={val} />;
 }
 
 export const Textarea = ({ register, name, val}) => {
-    return <textarea {...register(name)} placeholder={val} value={val} />;
+    return <textarea {...register(name)} placeholder={val} Value={val} />;
 }
 
 export const DateInput = ({ register, name}) => {

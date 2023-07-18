@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./index.scss"
 
 const CustomerCard = (customers) => {
-    console.log(customers)
+    // console.log(customers)
     if (customers.customers.length === 0) {
         return <tr><td></td><td><h1>暫無資料</h1></td><td></td></tr>
     } else {
@@ -18,7 +18,7 @@ const CustomerCard = (customers) => {
                 </div>
                 <div className={styles.cardbuttom}>
                     <div className={styles.cardbuttomitem}>到期日: 2024/06/15</div>
-                    <div className={styles.cardbuttomitem}>承辦: 朝壽</div>
+                    <div className={styles.cardbuttomitem}>承辦:{task.contractPerson}</div>
                     <div className={styles.cardbuttomitem}>業務: 禎琳</div>
                     <div className={styles.cardbuttomitem}>FAE: Jason</div>
                 </div>

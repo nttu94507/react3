@@ -7,8 +7,8 @@ const initCustomers: Icustomers = {
     ],
     // probe:[
     // ],
-    // probeInfo:[
-    // ],
+    customerInfo:[
+    ],
 }
 
 const customerReducer = (state = initCustomers, action: any) => {

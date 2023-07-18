@@ -1,0 +1,42 @@
+.customerFrom{
+    padding: 10px 0%;
+    // margin:10% auto auto auto;
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 350px;
+    align-items: center;
+    justify-items: center;
+}
+.customerfromcontent{
+    min-width: 400px;
+}
+
+.customerfromcontent>.cell{
+    margin: 20px 10px;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customerfromtitle{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    font-size: 32px;
+    color: #336699;
+    align-items: center;
+    // justify-content: center;
+}
+
+.editCustomerBtn{
+    background-color: #0162A9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1 1 auto;
+    padding: 10px;
+    margin: 0 20px;
+    color: #fff;
+}

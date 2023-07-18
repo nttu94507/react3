@@ -10,7 +10,7 @@ const Editprobe = (drop) => {
   const { register, getValues,reset } = useForm();
   const dispatch = useDispatch();
 
-  const postcreateprobe = (data: any, dispatch: any) => {
+  const postcreateprobe = (data: any) => {
 
     fetch('http://' + local + '/api/Probe/', {
       method: 'POST',
@@ -68,12 +68,12 @@ const Editprobe = (drop) => {
       <div className={styles.editlist}>
         <div className={styles.buttonDefault} onClick={() => {
           const value = getValues();
-          postcreateprobe(value, dispatch);
+          postcreateprobe(value);
         }} >
           新增
         </div>
         <div className={styles.buttonDefault} onClick={() => {
-          btn(dis)
+          btn(dis); reset();
         }} >
           取消
         </div>
